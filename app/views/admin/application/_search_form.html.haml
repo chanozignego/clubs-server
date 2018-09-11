@@ -1,0 +1,31 @@
+- if current_dashboard.const_defined?(:SEARCHABLE_ATTRIBUTES) && current_dashboard::SEARCHABLE_ATTRIBUTES.present? 
+  = simple_form_for(search, url: current_dashboard.search_path,
+    html: {class: 'simple_form admin-common-panel'}, method: :get) do |f|
+    // class: 'simple_form admin-common-panel mb30'
+    .row.admin-common-panel__header
+      .col-xs-12{style: "display: inline-flex; padding: 0px;"}
+        .col-xs-11
+          %h5
+            = t("administrate.filters")
+        .col-xs-1
+          %a.btn.btn-dark.pull-right{"data-toggle" => "collapse", href: "#searchForm", role: "button", "aria-expanded" => "false", "aria-controls" => "searchForm", style: "margin-top: 4px; font-size: 12px; padding: 7px 12px 3px 12px; border: 1px solid; color: black;"}
+            .glyphicon.glyphicon-chevron-down
+
+    .row.admin-common-panel__content.collapse.collapse-filters{id: "searchForm", style: "margin-top: 0px; margin-bottom: 0px;"}  
+      .row.admin-common-panel__content
+        - current_dashboard::SEARCHABLE_ATTRIBUTES.each_slice(3) do |methods|
+          - methods.each do |field, options = {}|
+            .col-xs-12.col-sm-6.col-md-4.col-lg-3
+              = f.input field, { label: search.klazz.human_attribute_name(field),
+                  required: false, input_html: { class: 'form-control',
+                  placeholder: search.klazz.human_attribute_name(field) } }.deep_merge(options)
+      .row.admin-common-panel__content
+        .col-xs-6.col-sm-6.col-md-4.col-lg-4.col-md-offset-4
+          = link_to t("administrate.actions.clear_form"), "#",
+            class: "js-reset-form btn btn-default full-width"
+        .col-xs-6.col-sm-6.col-md-4.col-lg-4
+          = button_tag( type: "submit",
+            class:"btn btn-large btn-primary width-100p") do
+            %span
+              = t("administrate.actions.search")
+            %i.fa.fa-search.ml5

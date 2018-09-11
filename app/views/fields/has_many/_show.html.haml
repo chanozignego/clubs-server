@@ -1,0 +1,35 @@
+/ - if field.resources.any?
+/   = render(                                              |
+/       "collection",                                      |
+/       collection_presenter: field.associated_collection, |
+/       resources: field.resources,                        |
+/       allow_mass_assignment: false                       |
+/     )                                                    |
+/   - if field.more_than_limit?
+/     %span
+/       = t(                                     |
+/           'administrate.fields.has_many.more', |
+/           count: field.limit,                  |
+/           total_count: field.data.count,       |
+/         )                                      |
+/ - else
+/   = t("administrate.fields.has_many.none")
+
+
+
+- if field.resources.any?
+  - dashboard = "#{field.attribute.to_s.singularize.camelize}Dashboard".safe_constantize
+  - order = dashboard::COLLECTION_ORDER || {id: :desc}
+  = render(                                              |
+      "collection",                                      |
+      collection_presenter: field.associated_collection, |
+      resources: field.data.order(order).page(params[:page]).per(@page_limit || field.limit),         |
+      allow_mass_assignment: false,                      |
+      dashboard: dashboard                               |
+
+    )                                                    |
+  - if field.more_than_limit?
+    .text-center{style: "margin-top: -30px; margin-botom: -20px;"}
+      = paginate field.resources.order(order).page(params[:page] || 1).per(@page_limit || field.limit)
+- else
+  = t("administrate.fields.has_many.none")

@@ -1,0 +1,4 @@
+= f.input field.attribute, as: :select, collection: field.tags(current_model_name),
+  label_method: -> (s) { I18n.t("#{field.downcase_model(current_model_name)}.#{field.attribute.to_s.pluralize}.#{s.to_s}") },
+  input_html: { class: 'js-select2 full-width', multiple: true }
+%br

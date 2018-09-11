@@ -1,0 +1,6 @@
+- if field.data.present?
+  - field.data.each do |res|
+    %span.label.label-default{style: "margin-right: 5px;"}
+      = I18n.t("#{field.downcase_model(current_model_name)}.#{field.attribute.to_s.pluralize}.#{res.to_s}")
+- else
+  = t("administrate.fields.has_many.none")

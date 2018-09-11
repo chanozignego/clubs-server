@@ -1,0 +1,9 @@
+/ = f.input field.attribute, as: :boolean, placeholder: f.object.class.human_attribute_name(field.name)
+
+.js-boolean-field{style: "display: inline-flex; margin-bottom: 10px;"}
+  %label{style: "margin-right: 10px; margin-top: 7px;"} 
+    = f.object.class.human_attribute_name(field.name)
+  %label.switch
+    %input.js-boolean-check{type: "checkbox", checked: f.object.send(field.attribute) || false}
+    %span.slider.round
+    = f.input field.attribute, as: :hidden, input_html: {value: f.object.send(field.attribute) || false, class: 'js-boolean-input'}

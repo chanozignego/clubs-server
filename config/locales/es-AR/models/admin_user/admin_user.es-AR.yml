@@ -1,0 +1,24 @@
+es-AR:
+  admin_user:
+    roles: 
+      superadmin: Super Administrador
+      simpleadmin: Administrador Común
+  activerecord:
+    attributes:
+      admin_user:
+        created_at: Fecha de creación
+        updated_at: Ultima actualización
+        telephone: Teléfono o Celular
+        first_name: Nombre
+        last_name: Apellido
+        email: Email
+        password: Contraseña
+        password_confirmation: Confirmar contraseña
+        remember_me: Recordarme
+        id_eq: Id
+        name_cont: Nombre
+        email_cont: Email
+    models:
+      admin_user:
+        one: Administrador
+        other: Administradores

@@ -1,0 +1,4 @@
+- if field.data.present? 
+  = I18n.t("#{field.downcase_model(current_model_name)}.#{field.attribute.to_s.pluralize}.#{field.data}")
+- else
+  = "-"

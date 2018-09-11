@@ -1,0 +1,58 @@
+.hidden-md.hidden-lg
+  %ul.nav.navbar-top-links
+    %li.dropdown{style: "margin-right: 0px;"}
+      %button.btn.btn-primary.dropdown-toggle{type: "button", "aria-haspopup" => true, "aria-expanded" => false, data: {toggle: :dropdown}}
+        %i.fa.fa-caret-left
+        //.glyphicon.glyphicon-chevron-left
+        Acciones
+
+      %ul.dropdown-menu.dropdown-menu-item
+        -if page.respond_to?(:resource) && page.resource.persisted?
+          %li.dropdown-item
+            = link_to([:edit, Administrate::NAMESPACE, page.resource]) do
+              %i.fa.fa-pencil.ml5
+              %span
+                = I18n.t("administrate.actions.edit_entity", entity: object_class(page.resource).try(:model_name).try(:human))
+
+          %li.dropdown-item
+            = link_to([Administrate::NAMESPACE, page.resource] ,method: :delete, data: { confirm: t("administrate.actions.confirm") }) do
+              %i.fa.fa-trash.ml5
+              %span
+                = t("administrate.actions.destroy")
+        - else
+          - if current_dashboard::EXPORT_TO_EXCEL
+            %li.dropdown-item
+              = link_to(send("admin_#{page.resource_name.pluralize}_export_to_excel_path", {format: :xls}), method: :post) do
+                %i.fa.fa-file-excel-o.ml5
+                %span
+                  = I18n.t("administrate.actions.export_to_excel")
+
+          %li.dropdown-item
+            = link_to( [:new, Administrate::NAMESPACE, page.resource_name]) do
+              %i.fa.fa-plus.ml5
+              %span
+                = I18n.t("administrate.actions.new_entity", entity: page.resource_name.camelize.constantize.model_name.human)
+
+
+
+.hidden-xs.hidden-sm
+  -if page.respond_to?(:resource) && page.resource.persisted?
+    = link_to([:edit, Administrate::NAMESPACE, page.resource], class: "btn btn-primary admin-header-buttons__item") do
+      %span
+        = I18n.t("administrate.actions.edit_entity", entity: object_class(page.resource).try(:model_name).try(:human))
+      %i.fa.fa-pencil.ml5
+
+    = link_to([Administrate::NAMESPACE, page.resource],class: "btn btn-danger ml10 admin-header-buttons__item",method: :delete, data: { confirm: t("administrate.actions.confirm") }) do
+      %span
+        = t("administrate.actions.destroy")
+      %i.fa.fa-trash.ml5
+  - else
+    - if current_dashboard::EXPORT_TO_EXCEL
+      = link_to(send("admin_#{page.resource_name.pluralize}_export_to_excel_path", {format: :xls}), method: :post, class: "btn btn-success admin-header-buttons__item") do
+        %span= I18n.t("administrate.actions.export_to_excel")
+        %i.fa.fa-file-excel-o.ml5
+
+    = link_to( [:new, Administrate::NAMESPACE, page.resource_name], class: "btn btn-primary admin-header-buttons__item") do
+      %span
+        = I18n.t("administrate.actions.new_entity", entity: page.resource_name.camelize.constantize.model_name.human)
+      %i.fa.fa-plus.ml5
