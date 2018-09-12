@@ -1,0 +1,2 @@
+class AuthorizedPolicy < ApplicationPolicy
+end
