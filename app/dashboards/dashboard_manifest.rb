@@ -14,6 +14,7 @@ class DashboardManifest
     :admin_users,
     :users,
     :bookeables,
+    :authorizeds,
   ]
 
   # `ROOT_DASHBOARD`
