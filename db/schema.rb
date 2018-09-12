@@ -82,6 +82,7 @@ ActiveRecord::Schema.define(version: 20180912200536) do
     t.string   "member_id"
     t.datetime "created_at",                      null: false
     t.datetime "updated_at",                      null: false
+    t.string   "telephone"
   end
 
   add_foreign_key "reservations", "bookeables"
