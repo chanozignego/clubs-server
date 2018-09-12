@@ -9,6 +9,7 @@ es-AR:
       update:
         success: Registro actualizado satisfactoriamente
     actions:
+      title: Acciones
       destroy: Eliminar
       edit: Editar
       show: Ver

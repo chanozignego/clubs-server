@@ -3,11 +3,17 @@
     %li.dropdown{style: "margin-right: 0px;"}
       %button.btn.btn-primary.dropdown-toggle{type: "button", "aria-haspopup" => true, "aria-expanded" => false, data: {toggle: :dropdown}}
         %i.fa.fa-caret-left
-        //.glyphicon.glyphicon-chevron-left
-        Acciones
+        = I18n.t("administrate.actions.title")
 
       %ul.dropdown-menu.dropdown-menu-item
         -if page.respond_to?(:resource) && page.resource.persisted?
+          - if page.resource.respond_to?(:password) && page.resource.respond_to?(:password_confirmation)
+            %li.dropdown-item
+              = link_to([Administrate::NAMESPACE, page.resource, :change_password]) do
+                %i.fa.fa-pencil.ml5
+                %span
+                  = I18n.t("administrate.actions.change_password")
+
           %li.dropdown-item
             = link_to([:edit, Administrate::NAMESPACE, page.resource]) do
               %i.fa.fa-pencil.ml5
@@ -37,6 +43,12 @@
 
 .hidden-xs.hidden-sm
   -if page.respond_to?(:resource) && page.resource.persisted?
+    - if page.resource.respond_to?(:password) && page.resource.respond_to?(:password_confirmation)
+      = link_to([Administrate::NAMESPACE, page.resource, :change_password], class: "btn btn-primary admin-header-buttons__item") do
+        %span
+          = I18n.t("administrate.actions.change_password")
+        %i.fa.fa-pencil.ml5
+
     = link_to([:edit, Administrate::NAMESPACE, page.resource], class: "btn btn-primary admin-header-buttons__item") do
       %span
         = I18n.t("administrate.actions.edit_entity", entity: object_class(page.resource).try(:model_name).try(:human))
