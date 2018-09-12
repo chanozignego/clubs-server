@@ -1,0 +1,21 @@
+es-AR:
+  activerecord:
+    attributes:
+      authorized:
+        created_at: Fecha de creación
+        updated_at: Ultima actualización
+        telephone: Teléfono o Celular
+        name: Nombre
+        email: Email
+        remember_me: Recordarme
+        date_in: Ingreso
+        date_out: Egreso
+        id_eq: Id
+        name_cont: Nombre
+        email_cont: Email
+        description: Descripcion
+        user: Invitado de
+    models:
+      authorized:
+        one: Autorizado
+        other: Autorizados
