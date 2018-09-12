@@ -1,0 +1,19 @@
+es-AR:
+  activerecord:
+    attributes:
+      user:
+        created_at: Fecha de creación
+        updated_at: Ultima actualización
+        telephone: Teléfono o Celular
+        name: Nombre
+        email: Email
+        password: Contraseña
+        password_confirmation: Confirmar contraseña
+        remember_me: Recordarme
+        id_eq: Id
+        name_cont: Nombre
+        email_cont: Email
+    models:
+      user:
+        one: Usuario
+        other: Usuarios
