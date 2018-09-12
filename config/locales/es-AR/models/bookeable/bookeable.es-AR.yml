@@ -1,0 +1,15 @@
+es-AR:
+  activerecord:
+    attributes:
+      bookeable:
+        created_at: Fecha de creación
+        updated_at: Ultima actualización
+        name: Nombre
+        unit_price: Precio
+        unit_time: Unidad de tiempo
+        description: Descripcion
+
+    models:
+      bookeable:
+        one: Reservable
+        other: Reservables

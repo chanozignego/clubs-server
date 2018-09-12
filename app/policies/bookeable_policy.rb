@@ -1,0 +1,2 @@
+class BookeablePolicy < ApplicationPolicy
+end
