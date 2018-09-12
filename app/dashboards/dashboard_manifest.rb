@@ -12,6 +12,7 @@ class DashboardManifest
   DASHBOARDS = [
     :home,
     :admin_users,
+    :users,
   ]
 
   # `ROOT_DASHBOARD`
