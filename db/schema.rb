@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180912194525) do
+ActiveRecord::Schema.define(version: 20180912200536) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -45,13 +45,14 @@ ActiveRecord::Schema.define(version: 20180912194525) do
   end
 
   create_table "posts", force: :cascade do |t|
-    t.string   "title",      default: "", null: false
-    t.integer  "state",      default: 0,  null: false
+    t.string   "title",           default: "", null: false
+    t.integer  "state",           default: 0,  null: false
     t.string   "summary"
-    t.text     "body",                    null: false
+    t.text     "body",                         null: false
     t.string   "author"
-    t.datetime "created_at",              null: false
-    t.datetime "updated_at",              null: false
+    t.datetime "created_at",                   null: false
+    t.datetime "updated_at",                   null: false
+    t.string   "principal_image"
   end
 
   create_table "reservations", force: :cascade do |t|
@@ -66,6 +67,12 @@ ActiveRecord::Schema.define(version: 20180912194525) do
 
   add_index "reservations", ["bookeable_id"], name: "index_reservations_on_bookeable_id", using: :btree
   add_index "reservations", ["user_id"], name: "index_reservations_on_user_id", using: :btree
+
+  create_table "temporal_images", force: :cascade do |t|
+    t.string   "image"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "name",               default: "", null: false

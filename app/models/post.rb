@@ -8,4 +8,6 @@ class Post < ActiveRecord::Base
     published: 4      # --> solo lo puede editar el editor
   }
 
+  mount_uploader :principal_image, PictureUploader
+
 end

@@ -26,6 +26,8 @@ Rails.application.routes.draw do
       put :update_password
     end
 
+    resources :post_images, only: :create
+
     root controller: DashboardManifest::ROOT_DASHBOARD, action: :index
   end
 

@@ -66,6 +66,11 @@ gem "roo", "~> 2.7.0"
 gem 'roo-xls'
 gem 'to_xls-rails'
 
+# Upload images
+gem "mini_magick"
+gem "carrierwave"
+gem "carrierwave-base64"
+
 group :development, :test do
   #Manage ENV variables
   gem 'dotenv-rails'
