@@ -13,6 +13,7 @@ class DashboardManifest
     :home,
     :admin_users,
     :users,
+    :bookeables,
   ]
 
   # `ROOT_DASHBOARD`
