@@ -69,11 +69,17 @@ class AuthorizedDashboard < ApplicationDashboard
   SEARCHABLE_ATTRIBUTES = [
     [:id_eq, {input_html: {type: :number, min: 0}}],
     [:name_cont],
-    [:email_cont]
+    [:dni_cont],
+    [:user_cont],
+    [:date_in_gteq, {input_html: {type: :datetime, class: "js-default-datepicker form-control"}}],
+    [:date_in_lteq, {input_html: {type: :datetime, class: "js-default-datepicker form-control"}}],
+    [:date_out_gteq, {input_html: {type: :datetime, class: "js-default-datepicker form-control"}}],
+    [:date_out_lteq, {input_html: {type: :datetime, class: "js-default-datepicker form-control"}}],
+
   ]
 
   def self.search_path
-    Rails.application.routes.url_helpers.admin_admin_users_path
+    Rails.application.routes.url_helpers.admin_authorizeds_path
   end
 
   # Overwrite this method to customize how users are displayed

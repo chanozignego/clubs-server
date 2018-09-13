@@ -9,5 +9,11 @@ class AdminUserSearch < Searchlight::Search
     query.where("first_name ILIKE '%#{opt}%' OR last_name ILIKE '%#{opt}%'")
   end
 
+  def search_roles
+    opt = options[:roles_cont]
+    query.where("roles ILIKE '%#{opt}%'")
+  end
+
+
 
 end

@@ -68,7 +68,17 @@ class AdminUserDashboard < ApplicationDashboard
   SEARCHABLE_ATTRIBUTES = [
     [:id_eq, {input_html: {type: :number, min: 0}}],
     [:name_cont],
-    [:email_cont]
+    [:email_cont],
+    [:roles_eq, {as: :select,
+                  collection: AdminUser::ROLES,
+                  include_blank: true,
+                  input_html: { class: "form-control js-select2" },
+                  value_method: :last,
+                  label_method: -> (ft) {
+                      I18n.t("roles.#{ft.first}")
+                    }
+                  }]
+
   ]
 
   def self.search_path
