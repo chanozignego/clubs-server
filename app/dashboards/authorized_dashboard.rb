@@ -14,7 +14,7 @@ class AuthorizedDashboard < ApplicationDashboard
     dni: Field::String,
     date_in: Field::DateTime,
     date_out: Field::DateTime,
-    description: Field::String,
+    description: Field::Text,
     user: Field::BelongsTo,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
