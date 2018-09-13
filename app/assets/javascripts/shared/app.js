@@ -83,11 +83,27 @@
     var context = context || "body";
     var $self = $(context);
     var dateFormat = I18n.t("date.formats.calendar_js").replace(/%/g, "/");
-    //Start DatePickers
-    $self.find(".js-default-datepicker").datetimepicker({
-      locale: I18n.locale,
-      format: dateFormat
-    });
+    // Start DatePickers
+    // Hack to set default date
+    var defaultDate = $self.find(".js-default-datepicker").data("date");
+    if (defaultDate != undefined && defaultDate != null) {
+      var stringDate = JSON.parse(defaultDate);
+      var date = new Date(stringDate);
+
+      date.setDate(date.getDate() + 1); // It's because of the UTC time
+      
+      $self.find(".js-default-datepicker").datetimepicker({
+        locale: I18n.locale,
+        format: dateFormat,
+        date: date
+      });
+
+    } else {
+      $self.find(".js-default-datepicker").datetimepicker({
+        locale: I18n.locale,
+        format: dateFormat
+      });
+    }
   };
 
   app.startTimepickers = function(context){
