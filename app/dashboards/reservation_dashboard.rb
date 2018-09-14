@@ -1,6 +1,6 @@
 require "administrate/base_dashboard"
 
-class BookeableDashboard < ApplicationDashboard
+class ReservationDashboard < ApplicationDashboard
   # ATTRIBUTE_TYPES
   # a hash that describes the type of each of the model's fields.
   #
@@ -9,10 +9,11 @@ class BookeableDashboard < ApplicationDashboard
   # on pages throughout the dashboard.
   ATTRIBUTE_TYPES = {
     id: Field::Number,
-    name: Field::String,
-    unit_price: Field::Number,
-    unit_time: Field::Number,
-    description: Field::Text,
+    user: Field::BelongsTo,
+    date: Field::DateTime,
+    time_used: Field::Number,
+    comments: Field::String,
+    bookeable: Field::BelongsTo,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
 
@@ -24,11 +25,13 @@ class BookeableDashboard < ApplicationDashboard
   # By default, it's limited to four items to reduce clutter on index pages.
   # Feel free to add, remove, or rearrange items.
   COLLECTION_ATTRIBUTES = [
+
     :id,
-    :unit_price,
-    :name,
-    :unit_time,
-    :description,
+    :user,
+    :date,
+    :time_used,
+    :comments,
+    :bookeable,
 
   ]
 
@@ -38,30 +41,35 @@ class BookeableDashboard < ApplicationDashboard
   # an array of attributes that will be displayed on the model's show page.
   SHOW_PAGE_ATTRIBUTES = [
     :id,
-    :unit_price,
-    :name,
-    :unit_time,
-    :description,
+    :user,
+    :date,
+    :time_used,
+    :comments,
+    :bookeable,
   ]
 
   # FORM_ATTRIBUTES
   # an array of attributes that will be displayed
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = [
-    :unit_price,
-    :name,
-    :unit_time,
-    :description,
+
+    :user,
+    :date,
+    :time_used,
+    :comments,
+    :bookeable,
   ]
 
   SEARCHABLE_ATTRIBUTES = [
     [:id_eq, {input_html: {type: :number, min: 0}}],
-    [:name_cont],
-    
+    [:user_cont],
+    [:date_gteq, {input_html: {type: :datetime, class: "js-default-datepicker form-control"}}],
+    [:date_lteq, {input_html: {type: :datetime, class: "js-default-datepicker form-control"}}],
+
   ]
 
   def self.search_path
-    Rails.application.routes.url_helpers.admin_bookeables_path
+    Rails.application.routes.url_helpers.admin_reservations_path
   end
 
   # Overwrite this method to customize how users are displayed

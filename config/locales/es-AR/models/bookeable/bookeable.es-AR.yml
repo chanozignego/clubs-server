@@ -7,7 +7,9 @@ es-AR:
         name: Nombre
         unit_price: Precio
         unit_time: Unidad de tiempo
-        description: Descripcion
+        description: Descripción
+        id_eq: Id
+        name_cont: Nombre
 
     models:
       bookeable:

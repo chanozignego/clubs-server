@@ -56,11 +56,13 @@ class UserDashboard < ApplicationDashboard
   SEARCHABLE_ATTRIBUTES = [
     [:id_eq, {input_html: {type: :number, min: 0}}],
     [:name_cont],
-    [:email_cont]
+    [:email_cont],
+    [:dni_cont]
+
   ]
 
   def self.search_path
-    Rails.application.routes.url_helpers.admin_admin_users_path
+    Rails.application.routes.url_helpers.admin_users_path
   end
 
   # Overwrite this method to customize how users are displayed

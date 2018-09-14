@@ -1,0 +1,20 @@
+es-AR:
+  site_content:
+  activerecord:
+    attributes:
+      site_content:
+        created_at: Fecha de creación
+        updated_at: Ultima actualización
+        id_eq: Id
+        name: Nombre
+        content_type: Tipo de contenido
+        file: Archivo
+        text: Texto
+        Description: Descripción
+        name_cont: Nombre
+
+
+    models:
+      site_content:
+        one: Contenido del sitio
+        other: Contenido de los sitios

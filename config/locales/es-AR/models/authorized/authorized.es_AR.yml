@@ -2,19 +2,27 @@ es-AR:
   activerecord:
     attributes:
       authorized:
+        user_id: Id Usuario
         created_at: Fecha de creación
         updated_at: Ultima actualización
         telephone: Teléfono o Celular
         name: Nombre
         email: Email
         remember_me: Recordarme
-        date_in: Ingreso
-        date_out: Egreso
+        date_in: Fecha ingreso
+        date_out: Fecha egreso
         id_eq: Id
         name_cont: Nombre
         email_cont: Email
-        description: Descripcion
-        user: Invitado de
+        description: Descripción
+        user: Autorizado por
+        dni: DNI
+        dni_cont: DNI
+        user_cont: Usuario Autorizante
+        date_in_gteq: Fecha ingreso desde
+        date_in_lteq: Fecha ingreso hasta
+        date_out_gteq: Fecha egreso desde
+        date_out_lteq: Fecha egreso hasta
     models:
       authorized:
         one: Autorizado
