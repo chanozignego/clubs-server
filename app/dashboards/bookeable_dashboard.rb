@@ -12,7 +12,7 @@ class BookeableDashboard < ApplicationDashboard
     name: Field::String,
     unit_price: Field::Number,
     unit_time: Field::Number,
-    description: Field::Text,
+    description: Field::RichText,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
 

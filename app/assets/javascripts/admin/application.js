@@ -22,3 +22,4 @@
 //= require sb-admin-2
 //= require shared/mass_assignment
 //= require shared/cocoon
+

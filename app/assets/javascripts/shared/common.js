@@ -4,6 +4,7 @@
 
     $(document).ready(function(){
         app.showFlashMessages({delay: 0});
+        app.startRichTextForm();
         app.startClearFormButton();
         app.startSelects();
         app.startAllPickers();
