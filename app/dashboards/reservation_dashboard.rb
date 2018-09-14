@@ -12,11 +12,10 @@ class ReservationDashboard < ApplicationDashboard
     user: Field::BelongsTo,
     date: Field::DateTime,
     time_used: Field::Number,
-    comments: Field::String,
+    comments: Field::Text,
     bookeable: Field::BelongsTo,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
-
   }
 
   # COLLECTION_ATTRIBUTES
@@ -25,14 +24,11 @@ class ReservationDashboard < ApplicationDashboard
   # By default, it's limited to four items to reduce clutter on index pages.
   # Feel free to add, remove, or rearrange items.
   COLLECTION_ATTRIBUTES = [
-
     :id,
-    :user,
     :date,
-    :time_used,
-    :comments,
     :bookeable,
-
+    :user,
+    :time_used
   ]
 
   EXCEL_ATTRIBUTES = COLLECTION_ATTRIBUTES
@@ -41,23 +37,22 @@ class ReservationDashboard < ApplicationDashboard
   # an array of attributes that will be displayed on the model's show page.
   SHOW_PAGE_ATTRIBUTES = [
     :id,
-    :user,
     :date,
+    :bookeable,
+    :user,
     :time_used,
     :comments,
-    :bookeable,
   ]
 
   # FORM_ATTRIBUTES
   # an array of attributes that will be displayed
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = [
-
-    :user,
     :date,
-    :time_used,
-    :comments,
     :bookeable,
+    :user,
+    :time_used,
+    :comments
   ]
 
   SEARCHABLE_ATTRIBUTES = [
@@ -65,7 +60,6 @@ class ReservationDashboard < ApplicationDashboard
     [:user_cont],
     [:date_gteq, {input_html: {type: :datetime, class: "js-default-datepicker form-control"}}],
     [:date_lteq, {input_html: {type: :datetime, class: "js-default-datepicker form-control"}}],
-
   ]
 
   def self.search_path

@@ -2,7 +2,7 @@ es-AR:
   activerecord:
     attributes:
       reservation:
-        user_id: Id Usuario
+        user_id: Usuario
         created_at: Fecha de creación
         updated_at: Ultima actualización
         remember_me: Recordarme
@@ -16,7 +16,7 @@ es-AR:
         comments: Comentarios
         user_cont: Usuario
         bookeable: Reservable
-
+        bookeable_id: Reservable
     models:
       reservation:
         one: Turno

@@ -12,7 +12,7 @@ class BookeableDashboard < ApplicationDashboard
     name: Field::String,
     unit_price: Field::Number,
     unit_time: Field::Number,
-    description: Field::RichText,
+    description: Field::Text,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
 
@@ -29,7 +29,6 @@ class BookeableDashboard < ApplicationDashboard
     :name,
     :unit_time,
     :description,
-
   ]
 
   EXCEL_ATTRIBUTES = COLLECTION_ATTRIBUTES

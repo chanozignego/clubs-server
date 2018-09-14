@@ -1,5 +1,4 @@
 es-AR:
-  site_content:
   activerecord:
     attributes:
       site_content:
@@ -10,11 +9,9 @@ es-AR:
         content_type: Tipo de contenido
         file: Archivo
         text: Texto
-        Description: Descripción
+        description: Descripción
         name_cont: Nombre
-
-
     models:
       site_content:
-        one: Contenido del sitio
-        other: Contenido de los sitios
+        one: Contenido
+        other: Contenidos

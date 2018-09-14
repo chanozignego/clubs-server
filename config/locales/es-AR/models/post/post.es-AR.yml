@@ -1,5 +1,11 @@
 es-AR:
   post:
+    states: 
+      in_progress: En Progreso
+      canceled: Cancelado
+      censored: Censurado
+      in_revision: En Revisión
+      published: Publicado
   activerecord:
     attributes:
       post:
@@ -13,10 +19,10 @@ es-AR:
         date_gteq: Fecha Desde
         date_lteq: Fecha hasta
         content_type: Tipo de contenido
-        Description: Descripción
-
-
-
+        description: Descripción
+        state: Estado
+        summary: Resúmen
+        body: Cuerpo
     models:
       post:
         one: Noticia

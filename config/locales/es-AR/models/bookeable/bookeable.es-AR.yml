@@ -10,7 +10,6 @@ es-AR:
         description: Descripción
         id_eq: Id
         name_cont: Nombre
-
     models:
       bookeable:
         one: Reservable

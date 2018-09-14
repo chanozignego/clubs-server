@@ -15,9 +15,8 @@ class SiteContentDashboard < ApplicationDashboard
     tag: Field::String,
     content_type: Field::String,
     file: Field::String,
-    text: Field::Text,
     description: Field::Text,
-
+    text: Field::RichText,
   }
 
   # COLLECTION_ATTRIBUTES
@@ -29,10 +28,7 @@ class SiteContentDashboard < ApplicationDashboard
     :id,
     :tag,
     :name,
-    :content_type,
-    :file,
-    :text,
-    :description,
+    :content_type
   ]
 
   EXCEL_ATTRIBUTES = COLLECTION_ATTRIBUTES
@@ -45,8 +41,8 @@ class SiteContentDashboard < ApplicationDashboard
     :name,
     :content_type,
     :file,
-    :text,
     :description,
+    :text,
   ]
 
   # FORM_ATTRIBUTES
@@ -57,15 +53,13 @@ class SiteContentDashboard < ApplicationDashboard
     :name,
     :content_type,
     :file,
-    :text,
     :description,
+    :text,
   ]
 
   SEARCHABLE_ATTRIBUTES = [
     [:id_eq, {input_html: {type: :number, min: 0}}],
-    [:name_cont],
-
-
+    [:name_cont]
   ]
 
   def self.search_path

@@ -10,12 +10,11 @@ class EventDashboard < ApplicationDashboard
   ATTRIBUTE_TYPES = {
     id: Field::Number,
     name: Field::String,
-    description: Field::Text,
+    description: Field::RichText,
     place: Field::String,
     date: Field::DateTime,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
-
   }
 
   # COLLECTION_ATTRIBUTES
@@ -25,11 +24,9 @@ class EventDashboard < ApplicationDashboard
   # Feel free to add, remove, or rearrange items.
   COLLECTION_ATTRIBUTES = [
     :id,
-    :name,
-    :description,
-    :place,
     :date,
-
+    :name,
+    :place,
   ]
 
   EXCEL_ATTRIBUTES = COLLECTION_ATTRIBUTES
@@ -38,22 +35,20 @@ class EventDashboard < ApplicationDashboard
   # an array of attributes that will be displayed on the model's show page.
   SHOW_PAGE_ATTRIBUTES = [
     :id,
+    :date,
     :name,
     :place,
-    :date,
-    :description,
-
+    :description
   ]
 
   # FORM_ATTRIBUTES
   # an array of attributes that will be displayed
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = [
-
+    :date,
     :name,
     :place,
-    :date,
-    :description,
+    :description
   ]
 
   SEARCHABLE_ATTRIBUTES = [
