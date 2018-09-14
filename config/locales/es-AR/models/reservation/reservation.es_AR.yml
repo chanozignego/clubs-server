@@ -1,0 +1,23 @@
+es-AR:
+  activerecord:
+    attributes:
+      reservation:
+        user_id: Id Usuario
+        created_at: Fecha de creación
+        updated_at: Ultima actualización
+        remember_me: Recordarme
+        date: Fecha
+        id_eq: Id
+        description: Descripción
+        user: Usuario
+        date_gteq: Fecha desde
+        date_lteq: Fecha hasta
+        time_used: Tiempo usado
+        comments: Comentarios
+        user_cont: Usuario
+        bookeable: Reservable
+
+    models:
+      reservation:
+        one: Turno
+        other: Turnos

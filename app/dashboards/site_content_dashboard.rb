@@ -1,6 +1,6 @@
 require "administrate/base_dashboard"
 
-class UserDashboard < ApplicationDashboard
+class SiteContentDashboard < ApplicationDashboard
   # ATTRIBUTE_TYPES
   # a hash that describes the type of each of the model's fields.
   #
@@ -9,12 +9,14 @@ class UserDashboard < ApplicationDashboard
   # on pages throughout the dashboard.
   ATTRIBUTE_TYPES = {
     id: Field::Number,
-    email: Field::String,
     name: Field::String,
-    telephone: Field::Custom,
-    dni: Field::String,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
+    tag: Field::String,
+    content_type: Field::String,
+    file: Field::String,
+    text: Field::Text,
+    description: Field::Text,
 
   }
 
@@ -25,10 +27,12 @@ class UserDashboard < ApplicationDashboard
   # Feel free to add, remove, or rearrange items.
   COLLECTION_ATTRIBUTES = [
     :id,
-    :email,
+    :tag,
     :name,
-    :telephone,
-    :dni
+    :content_type,
+    :file,
+    :text,
+    :description,
   ]
 
   EXCEL_ATTRIBUTES = COLLECTION_ATTRIBUTES
@@ -37,27 +41,30 @@ class UserDashboard < ApplicationDashboard
   # an array of attributes that will be displayed on the model's show page.
   SHOW_PAGE_ATTRIBUTES = [
     :id,
-    :email,
+    :tag,
     :name,
-    :telephone,
-    :dni
+    :content_type,
+    :file,
+    :text,
+    :description,
   ]
 
   # FORM_ATTRIBUTES
   # an array of attributes that will be displayed
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = [
-    :email,
+    :tag,
     :name,
-    :telephone,
-    :dni
+    :content_type,
+    :file,
+    :text,
+    :description,
   ]
 
   SEARCHABLE_ATTRIBUTES = [
     [:id_eq, {input_html: {type: :number, min: 0}}],
     [:name_cont],
-    [:email_cont],
-    [:dni_cont]
+
 
   ]
 

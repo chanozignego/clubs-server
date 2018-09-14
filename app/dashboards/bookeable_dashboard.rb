@@ -47,7 +47,7 @@ class BookeableDashboard < ApplicationDashboard
   # FORM_ATTRIBUTES
   # an array of attributes that will be displayed
   # on the model's form (`new` and `edit`) pages.
-  FORM_ATTRIBUTES = [    
+  FORM_ATTRIBUTES = [
     :unit_price,
     :name,
     :unit_time,
@@ -57,11 +57,11 @@ class BookeableDashboard < ApplicationDashboard
   SEARCHABLE_ATTRIBUTES = [
     [:id_eq, {input_html: {type: :number, min: 0}}],
     [:name_cont],
-
+    
   ]
 
   def self.search_path
-    Rails.application.routes.url_helpers.admin_admin_users_path
+    Rails.application.routes.url_helpers.admin_bookeables_path
   end
 
   # Overwrite this method to customize how users are displayed

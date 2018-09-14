@@ -1,6 +1,6 @@
 es-AR:
   admin_user:
-    roles: 
+    roles:
       superadmin: Super Administrador
       simpleadmin: Administrador Común
   activerecord:
@@ -18,6 +18,8 @@ es-AR:
         id_eq: Id
         name_cont: Nombre
         email_cont: Email
+        roles_eq: Rol
+
     models:
       admin_user:
         one: Administrador

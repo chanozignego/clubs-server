@@ -1,6 +1,6 @@
 require "administrate/base_dashboard"
 
-class UserDashboard < ApplicationDashboard
+class PostDashboard < ApplicationDashboard
   # ATTRIBUTE_TYPES
   # a hash that describes the type of each of the model's fields.
   #
@@ -9,10 +9,11 @@ class UserDashboard < ApplicationDashboard
   # on pages throughout the dashboard.
   ATTRIBUTE_TYPES = {
     id: Field::Number,
-    email: Field::String,
-    name: Field::String,
-    telephone: Field::Custom,
-    dni: Field::String,
+    title: Field::String,
+    State: Field::Number,
+    Summary: Field::String,
+    body: Field::Text,
+    author: Field::String,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
 
@@ -25,10 +26,13 @@ class UserDashboard < ApplicationDashboard
   # Feel free to add, remove, or rearrange items.
   COLLECTION_ATTRIBUTES = [
     :id,
-    :email,
-    :name,
-    :telephone,
-    :dni
+    :title,
+    :State,
+    :Summary,
+    :body,
+    :author,
+
+
   ]
 
   EXCEL_ATTRIBUTES = COLLECTION_ATTRIBUTES
@@ -36,33 +40,43 @@ class UserDashboard < ApplicationDashboard
   # SHOW_PAGE_ATTRIBUTES
   # an array of attributes that will be displayed on the model's show page.
   SHOW_PAGE_ATTRIBUTES = [
+
     :id,
-    :email,
-    :name,
-    :telephone,
-    :dni
+    :title,
+    :State,
+    :Summary,
+    :body,
+    :author,
+    :created_at,
+    :updated_at,
+
   ]
 
   # FORM_ATTRIBUTES
   # an array of attributes that will be displayed
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = [
-    :email,
-    :name,
-    :telephone,
-    :dni
+
+    :title,
+    :State,
+    :Summary,
+    :body,
+    :author,
+
+
   ]
 
   SEARCHABLE_ATTRIBUTES = [
     [:id_eq, {input_html: {type: :number, min: 0}}],
-    [:name_cont],
-    [:email_cont],
-    [:dni_cont]
+    [:title_cont],
+    [:author_cont],
+    [:date_gteq, {input_html: {type: :datetime, class: "js-default-datepicker form-control"}}],
+    [:date_lteq, {input_html: {type: :datetime, class: "js-default-datepicker form-control"}}],
 
   ]
 
   def self.search_path
-    Rails.application.routes.url_helpers.admin_users_path
+    Rails.application.routes.url_helpers.admin_posts_path
   end
 
   # Overwrite this method to customize how users are displayed
