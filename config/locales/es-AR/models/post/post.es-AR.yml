@@ -1,0 +1,23 @@
+es-AR:
+  post:
+  activerecord:
+    attributes:
+      post:
+        created_at: Fecha de creación
+        updated_at: Ultima actualización
+        id_eq: Id
+        title: Título
+        title_cont: Título
+        author: Autor
+        author_cont: Autor
+        date_gteq: Fecha Desde
+        date_lteq: Fecha hasta
+        content_type: Tipo de contenido
+        Description: Descripción
+
+
+
+    models:
+      post:
+        one: Noticia
+        other: Noticias

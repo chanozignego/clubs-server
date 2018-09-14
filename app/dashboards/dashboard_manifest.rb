@@ -17,7 +17,8 @@ class DashboardManifest
     :bookeables,
     :events,
     :site_contents,
-    :reservations
+    :reservations,
+    :posts
   ]
 
   # `ROOT_DASHBOARD`

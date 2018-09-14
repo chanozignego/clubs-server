@@ -1,24 +1,18 @@
 es-AR:
   site_content:
-    roles:
-      superadmin: Super Administrador
-      simpleadmin: Administrador Común
   activerecord:
     attributes:
-      admin_user:
+      site_content:
         created_at: Fecha de creación
         updated_at: Ultima actualización
-        telephone: Teléfono o Celular
-        first_name: Nombre
-        last_name: Apellido
-        email: Email
-        password: Contraseña
-        password_confirmation: Confirmar contraseña
-        remember_me: Recordarme
         id_eq: Id
+        name: Nombre
+        content_type: Tipo de contenido
+        file: Archivo
+        text: Texto
+        Description: Descripción
         name_cont: Nombre
-        email_cont: Email
-        roles_eq: Rol
+
 
     models:
       site_content:

@@ -6,6 +6,7 @@ class CreatePosts < ActiveRecord::Migration
       t.string :summary
       t.text :body, null: false
       t.string :author
+      t.datetime :date, null: false
 
       t.timestamps null: false
     end
