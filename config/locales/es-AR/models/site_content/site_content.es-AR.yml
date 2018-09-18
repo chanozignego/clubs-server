@@ -10,8 +10,10 @@ es-AR:
         content_type: Tipo de contenido
         file: Archivo
         text: Texto
-        Description: Descripción
+        description: Descripción
         name_cont: Nombre
+        content_type_cont: Tipo de contenido
+        tag_cont: Tag
 
 
     models:

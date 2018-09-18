@@ -13,8 +13,8 @@ class SiteContentDashboard < ApplicationDashboard
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
     tag: Field::String,
-    content_type: Field::String,
-    file: Field::String,
+    content_type: Field::Number,
+    file: Field::File,
     text: Field::Text,
     description: Field::Text,
 
@@ -64,12 +64,14 @@ class SiteContentDashboard < ApplicationDashboard
   SEARCHABLE_ATTRIBUTES = [
     [:id_eq, {input_html: {type: :number, min: 0}}],
     [:name_cont],
+    [:tag_cont],
+    [:content_type_cont],
 
 
   ]
 
   def self.search_path
-    Rails.application.routes.url_helpers.admin_users_path
+    Rails.application.routes.url_helpers.admin_site_contents_path
   end
 
   # Overwrite this method to customize how users are displayed
