@@ -97,7 +97,7 @@ task :production do
   set :environment, "production"
   # set :gulp_apps, ["simp-web", "simp-carrier-web", "simp-landing"]
   set :log_files, ["development.log", "newrelic_agent.log", "production.log", "puma-1.log", "redis-1.log", "sidekiq-1.log"]
-  server "#{domain}", :web, :app, :db, :primary => true
+  server "clubs.simpit.co", :web, :app, :db, :primary => true
 
   namespace :foreman do
     set(:foreman_concurrency) { "puma=1,sidekiq=1,redis=1" }
