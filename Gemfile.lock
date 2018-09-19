@@ -6,7 +6,7 @@ GIT
       railties (>= 3.1)
 
 GIT
-  remote: git@github.com:chanozignego/stackmint.git
+  remote: https://github.com/chanozignego/stackmint.git
   revision: 2418f5df4f3e585961795fce4e25725720ed4936
   specs:
     stackmint (0.0.2)
