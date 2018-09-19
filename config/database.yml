@@ -23,7 +23,7 @@ test:
 
 production:
   adapter: postgresql
-  database: <%= ENV["DB_DATABASE"] || "clubs_production" %>
-  username: <%= ENV["DB_USERNAME"] || "dev"  %>
-  password: <%= ENV["DB_PASSWORD"] || "dev"  %>
+  database: <%= ENV["DB_DATABASE"] || ENV["DATABASE_NAME"] || "clubs_production" %>
+  username: <%= ENV["DB_USERNAME"] || ENV["DATABASE_USER"] || "dev"  %>
+  password: <%= ENV["DB_PASSWORD"] || ENV["DATABASE_PASSWORD"] || "dev"  %>
   host: <%= ENV["DB_HOST"] || "localhost" %>
