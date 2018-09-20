@@ -13,10 +13,11 @@ class SiteContentDashboard < ApplicationDashboard
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
     tag: Field::String,
-    content_type: Field::String,
-    file: Field::String,
-    description: Field::Text,
-    text: Field::RichText,
+    content_type: Field::Enum,
+    file: Field::File,
+    text: Field::Text,
+    description: Field::RichText,
+
   }
 
   # COLLECTION_ATTRIBUTES
@@ -28,7 +29,10 @@ class SiteContentDashboard < ApplicationDashboard
     :id,
     :tag,
     :name,
-    :content_type
+    :content_type,
+    :file,
+    :text,
+    :description,
   ]
 
   EXCEL_ATTRIBUTES = COLLECTION_ATTRIBUTES
@@ -41,8 +45,8 @@ class SiteContentDashboard < ApplicationDashboard
     :name,
     :content_type,
     :file,
-    :description,
     :text,
+    :description,
   ]
 
   # FORM_ATTRIBUTES
@@ -53,17 +57,32 @@ class SiteContentDashboard < ApplicationDashboard
     :name,
     :content_type,
     :file,
-    :description,
     :text,
+    :description,
   ]
 
   SEARCHABLE_ATTRIBUTES = [
     [:id_eq, {input_html: {type: :number, min: 0}}],
-    [:name_cont]
+    [:name_cont],
+    [:tag_cont],
+    [:content_type_eq, {as: :select,
+                     collection: SiteContent.status,
+                     include_blank: true,
+                     input_html: { class: "form-control js-select2" },
+                     value_method: :last,
+                     label_method: -> (ft) {
+                         I18n.t("site_content.content_types.#{ft.first
+    					}")
+                       }
+                     }]
+
+
+
+
   ]
 
   def self.search_path
-    Rails.application.routes.url_helpers.admin_users_path
+    Rails.application.routes.url_helpers.admin_site_contents_path
   end
 
   # Overwrite this method to customize how users are displayed
