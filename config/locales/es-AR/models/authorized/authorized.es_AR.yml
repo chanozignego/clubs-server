@@ -2,7 +2,7 @@ es-AR:
   activerecord:
     attributes:
       authorized:
-        user_id: Id Usuario
+        user_id: Autorizado por
         created_at: Fecha de creación
         updated_at: Ultima actualización
         telephone: Teléfono o Celular
@@ -18,7 +18,7 @@ es-AR:
         user: Autorizado por
         dni: DNI
         dni_cont: DNI
-        user_cont: Usuario Autorizante
+        user_cont: Autorizado por
         date_in_gteq: Fecha ingreso desde
         date_in_lteq: Fecha ingreso hasta
         date_out_gteq: Fecha egreso desde

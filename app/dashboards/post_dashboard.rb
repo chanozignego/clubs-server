@@ -10,13 +10,12 @@ class PostDashboard < ApplicationDashboard
   ATTRIBUTE_TYPES = {
     id: Field::Number,
     title: Field::String,
-    State: Field::Number,
-    Summary: Field::String,
-    body: Field::Text,
+    state: Field::Enum,
+    summary: Field::Text,
     author: Field::String,
+    body: Field::RichText,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
-
   }
 
   # COLLECTION_ATTRIBUTES
@@ -27,12 +26,9 @@ class PostDashboard < ApplicationDashboard
   COLLECTION_ATTRIBUTES = [
     :id,
     :title,
-    :State,
-    :Summary,
-    :body,
-    :author,
-
-
+    :state,
+    :summary,
+    :author
   ]
 
   EXCEL_ATTRIBUTES = COLLECTION_ATTRIBUTES
@@ -40,30 +36,25 @@ class PostDashboard < ApplicationDashboard
   # SHOW_PAGE_ATTRIBUTES
   # an array of attributes that will be displayed on the model's show page.
   SHOW_PAGE_ATTRIBUTES = [
-
     :id,
     :title,
-    :State,
-    :Summary,
-    :body,
+    :state,
     :author,
+    :summary,
+    :body,
     :created_at,
     :updated_at,
-
   ]
 
   # FORM_ATTRIBUTES
   # an array of attributes that will be displayed
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = [
-
     :title,
-    :State,
-    :Summary,
-    :body,
+    :state,
     :author,
-
-
+    :summary,
+    :body
   ]
 
   SEARCHABLE_ATTRIBUTES = [

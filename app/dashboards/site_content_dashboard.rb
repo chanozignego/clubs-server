@@ -13,10 +13,10 @@ class SiteContentDashboard < ApplicationDashboard
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
     tag: Field::String,
-    content_type: Field::Number,
+    content_type: Field::Enum,
     file: Field::File,
     text: Field::Text,
-    description: Field::Text,
+    description: Field::RichText,
 
   }
 
@@ -65,7 +65,17 @@ class SiteContentDashboard < ApplicationDashboard
     [:id_eq, {input_html: {type: :number, min: 0}}],
     [:name_cont],
     [:tag_cont],
-    [:content_type_cont],
+    [:content_type_eq, {as: :select,
+                     collection: SiteContent.content_types,
+                     include_blank: true,
+                     input_html: { class: "form-control js-select2" },
+                     value_method: :last,
+                     label_method: -> (ft) {
+                         I18n.t("site_content.content_types.#{ft.first}")
+                       }
+                     }]
+
+
 
 
   ]

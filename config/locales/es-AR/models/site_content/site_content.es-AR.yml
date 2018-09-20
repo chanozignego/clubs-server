@@ -1,5 +1,13 @@
 es-AR:
+  administrate:
+      select_option: Tipo de contenido
+
   site_content:
+      content_types:
+        image: Imagen
+        video: Video
+        text: Texto
+
   activerecord:
     attributes:
       site_content:
@@ -9,14 +17,14 @@ es-AR:
         name: Nombre
         content_type: Tipo de contenido
         file: Archivo
+        content_type_cont: Tipo de contenido
+        tag_cont: Tag
         text: Texto
         description: Descripción
         name_cont: Nombre
-        content_type_cont: Tipo de contenido
-        tag_cont: Tag
-
-
+        select_option: Tipo de contenido
+        content_type_eq: Tipo de contenido
     models:
       site_content:
-        one: Contenido del sitio
-        other: Contenido de los sitios
+        one: Contenido
+        other: Contenidos

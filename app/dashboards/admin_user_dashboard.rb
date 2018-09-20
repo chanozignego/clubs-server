@@ -75,7 +75,7 @@ class AdminUserDashboard < ApplicationDashboard
                   input_html: { class: "form-control js-select2" },
                   value_method: :last,
                   label_method: -> (ft) {
-                      I18n.t("roles.#{ft.first}")
+                      I18n.t("admin_user.roles.#{ft}")
                     }
                   }]
 

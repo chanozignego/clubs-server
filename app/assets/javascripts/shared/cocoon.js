@@ -4,6 +4,7 @@
 
   $(document).on('cocoon:after-insert',function(event, container){
       var $container = $(container);
+      app.startRichTextForm($container);
       app.startClearFormButton($container);
       app.startSelects($container);
       app.startSelects($container);

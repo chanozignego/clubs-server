@@ -6,14 +6,14 @@ es-AR:
         updated_at: Ultima actualización
         telephone: Teléfono o Celular
         name: Nombre
-        place: Ubicacion
+        place: Ubicación
         date: Fecha
         remember_me: Recordarme
         id_eq: Id
         name_cont: Nombre
         description: Descripción
-        event: evento
-        place_cont: Ubicacion
+        event: Evento
+        place_cont: Ubicación
         date_gteq: Fecha desde
         date_lteq: Fecha hasta
     models:

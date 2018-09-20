@@ -33,9 +33,7 @@ class AuthorizedDashboard < ApplicationDashboard
     :dni,
     :date_in,
     :date_out,
-    :description,
     :user,
-
   ]
 
   EXCEL_ATTRIBUTES = COLLECTION_ATTRIBUTES
@@ -44,26 +42,26 @@ class AuthorizedDashboard < ApplicationDashboard
   # an array of attributes that will be displayed on the model's show page.
   SHOW_PAGE_ATTRIBUTES = [
     :id,
+    :user,
     :name,
     :telephone,
     :dni,
     :date_in,
     :date_out,
     :description,
-    :user,
   ]
 
   # FORM_ATTRIBUTES
   # an array of attributes that will be displayed
   # on the model's form (`new` and `edit`) pages.
   FORM_ATTRIBUTES = [
+    :user,
     :name,
     :telephone,
     :dni,
     :date_in,
     :date_out,
     :description,
-    :user,
   ]
 
   SEARCHABLE_ATTRIBUTES = [

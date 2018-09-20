@@ -29,7 +29,6 @@ class BookeableDashboard < ApplicationDashboard
     :name,
     :unit_time,
     :description,
-
   ]
 
   EXCEL_ATTRIBUTES = COLLECTION_ATTRIBUTES
