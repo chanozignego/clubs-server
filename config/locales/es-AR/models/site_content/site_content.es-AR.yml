@@ -7,7 +7,6 @@ es-AR:
         image: Imagen
         video: Video
         text: Texto
-
   activerecord:
     attributes:
       site_content:

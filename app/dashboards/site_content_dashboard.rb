@@ -29,10 +29,7 @@ class SiteContentDashboard < ApplicationDashboard
     :id,
     :tag,
     :name,
-    :content_type,
-    :file,
-    :text,
-    :description,
+    :content_type
   ]
 
   EXCEL_ATTRIBUTES = COLLECTION_ATTRIBUTES
@@ -45,8 +42,8 @@ class SiteContentDashboard < ApplicationDashboard
     :name,
     :content_type,
     :file,
-    :text,
     :description,
+    :text,
   ]
 
   # FORM_ATTRIBUTES
@@ -57,8 +54,8 @@ class SiteContentDashboard < ApplicationDashboard
     :name,
     :content_type,
     :file,
-    :text,
     :description,
+    :text,
   ]
 
   SEARCHABLE_ATTRIBUTES = [
@@ -74,10 +71,6 @@ class SiteContentDashboard < ApplicationDashboard
                          I18n.t("site_content.content_types.#{ft.first}")
                        }
                      }]
-
-
-
-
   ]
 
   def self.search_path
