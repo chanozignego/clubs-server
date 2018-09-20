@@ -73,7 +73,6 @@ ActiveRecord::Schema.define(version: 20180912203510) do
     t.string   "summary"
     t.text     "body",                         null: false
     t.string   "author"
-    t.datetime "date",                         null: false
     t.datetime "created_at",                   null: false
     t.datetime "updated_at",                   null: false
     t.string   "principal_image"

@@ -15,9 +15,8 @@ class SiteContentDashboard < ApplicationDashboard
     tag: Field::String,
     content_type: Field::Enum,
     file: Field::File,
-    text: Field::Text,
-    description: Field::RichText,
-
+    text: Field::RichText,
+    description: Field::Text
   }
 
   # COLLECTION_ATTRIBUTES
