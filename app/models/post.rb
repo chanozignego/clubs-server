@@ -1,5 +1,5 @@
 class Post < ActiveRecord::Base
-  
+
   enum state: {
     in_progress: 0,   # --> lo puede editar el autor
     canceled: 1,      # --> lo pueden cancelar todos
@@ -9,5 +9,7 @@ class Post < ActiveRecord::Base
   }
 
   mount_uploader :principal_image, PictureUploader
+
+  validates :date, :title, :state, :author, :summary, :body, presence: true
 
 end

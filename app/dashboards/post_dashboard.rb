@@ -16,6 +16,7 @@ class PostDashboard < ApplicationDashboard
     body: Field::RichText,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
+    date: Field::Datetime,
   }
 
   # COLLECTION_ATTRIBUTES
@@ -28,7 +29,8 @@ class PostDashboard < ApplicationDashboard
     :title,
     :state,
     :summary,
-    :author
+    :author,
+    :date
   ]
 
   EXCEL_ATTRIBUTES = COLLECTION_ATTRIBUTES
@@ -44,6 +46,7 @@ class PostDashboard < ApplicationDashboard
     :body,
     :created_at,
     :updated_at,
+    :date
   ]
 
   # FORM_ATTRIBUTES
@@ -54,7 +57,8 @@ class PostDashboard < ApplicationDashboard
     :state,
     :author,
     :summary,
-    :body
+    :body,
+    :date,
   ]
 
   SEARCHABLE_ATTRIBUTES = [

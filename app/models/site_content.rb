@@ -7,4 +7,8 @@ class SiteContent < ActiveRecord::Base
   }
 
   mount_uploader :file, FileUploader
+
+
+  validates :tag, :name, :content_type, presence: true
+
 end
