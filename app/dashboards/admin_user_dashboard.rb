@@ -12,6 +12,8 @@ class AdminUserDashboard < ApplicationDashboard
     email: Field::String,
     first_name: Field::String,
     last_name: Field::String,
+    password: Field::Password,
+    password_confirmation: Field::Password,
     telephone: Field::Custom,
     encrypted_password: Field::Password,
     reset_password_token: Field::String,
@@ -62,7 +64,9 @@ class AdminUserDashboard < ApplicationDashboard
     :first_name,
     :last_name,
     :telephone,
-    :roles
+    :roles,
+    :password,
+    :password_confirmation,
   ]
 
   SEARCHABLE_ATTRIBUTES = [
