@@ -23,6 +23,7 @@ es-AR:
         state: Estado
         summary: Resúmen
         body: Cuerpo
+        date: Fecha
     models:
       post:
         one: Noticia

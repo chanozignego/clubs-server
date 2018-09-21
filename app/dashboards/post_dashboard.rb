@@ -16,7 +16,7 @@ class PostDashboard < ApplicationDashboard
     body: Field::RichText,
     created_at: Field::DateTime,
     updated_at: Field::DateTime,
-    date: Field::Datetime,
+    date: Field::DateTime,
   }
 
   # COLLECTION_ATTRIBUTES
