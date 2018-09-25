@@ -1,5 +1,6 @@
 //= require jquery
 //= require jquery_ujs
+//= require jquery-ui
 //= require inputmask
 //= require jquery.inputmask
 //= require selectize
@@ -23,3 +24,12 @@
 //= require shared/mass_assignment
 //= require shared/cocoon
 
+
+//= require admin/plugins
+//= require admin/moment.min
+//= require admin/fullcalendar
+//= require admin/fullcalendar.min
+//= require admin/gcal.min
+//= require admin/scheduler
+//= require admin/scheduler.min
+//= require admin/calendar

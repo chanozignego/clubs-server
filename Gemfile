@@ -12,6 +12,7 @@ gem 'uglifier', '>= 1.3.0'
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 gem 'jquery-inputmask-rails', github: 'knapo/jquery-inputmask-rails'
+gem 'jquery-ui-rails'
 
 gem 'active_model_serializers'
 
