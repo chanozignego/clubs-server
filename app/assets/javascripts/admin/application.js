@@ -24,6 +24,8 @@
 //= require shared/mass_assignment
 //= require shared/cocoon
 
+//= require daterangepicker
+//= require admin/date_range_picker
 //= require moment 
 //= require fullcalendar
 //= require fullcalendar/locale/es
