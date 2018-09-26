@@ -18,7 +18,6 @@
  *= require timeline
  *= require sb-admin-2
  *= require jquery-ui
-
  */
 
  @import "font-awesome";
@@ -26,6 +25,6 @@
 
  @import "admin/common";
  @import "admin/backoffice";
- @import "admin/fullcalendar.print.min";
- @import "admin/fullcalendar.min";
- @import "admin/scheduler.min";
+ @import 'admin/calendar';
+ @import 'fullcalendar';
+ @import 'fullcalendar/scheduler';

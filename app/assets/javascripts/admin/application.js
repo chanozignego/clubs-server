@@ -24,12 +24,8 @@
 //= require shared/mass_assignment
 //= require shared/cocoon
 
-
-//= require admin/plugins
-//= require admin/moment.min
-//= require admin/fullcalendar
-//= require admin/fullcalendar.min
-//= require admin/gcal.min
-//= require admin/scheduler
-//= require admin/scheduler.min
+//= require moment 
+//= require fullcalendar
+//= require fullcalendar/locale/es
+//= require fullcalendar/scheduler
 //= require admin/calendar

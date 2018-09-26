@@ -72,6 +72,11 @@ gem "mini_magick"
 gem "carrierwave"
 gem "carrierwave-base64"
 
+#Calendar
+gem 'momentjs-rails'
+gem 'fullcalendar'
+
+
 group :development, :test do
   #Manage ENV variables
   gem 'dotenv-rails'
