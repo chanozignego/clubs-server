@@ -18,7 +18,8 @@ class DashboardManifest
     :events,
     :site_contents,
     :reservations,
-    :posts
+    :posts,
+    
   ]
 
   # `ROOT_DASHBOARD`

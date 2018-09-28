@@ -1,6 +1,6 @@
 require 'sidekiq/web'
 Rails.application.routes.draw do
-  
+
   devise_for :admin_users, path: :admin, controllers: {
     sessions: 'admin/devise/sessions',
     #registrations: 'admin/devise/registrations',
@@ -9,13 +9,21 @@ Rails.application.routes.draw do
     unlocks: 'admin/devise/unlocks'
   }
 
+
+
   namespace :admin do
+
+      get "/settings", to: "settings#show"
+      get "/settings/edit", to: "settings#edit"
+      put "/settings", to: "settings#update"
+
     DashboardManifest::DASHBOARDS.each do |dashboard_resource|
       resources dashboard_resource
 
+
       #Mass Assigment routes
       namespace dashboard_resource do
-        post :mass_assignment 
+        post :mass_assignment
         post :export_to_excel
       end
 
