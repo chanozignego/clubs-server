@@ -5,7 +5,7 @@ $(document).ready(function() { // document ready
     locale: 'es',
     now: '2018-04-07',
     editable: true, // enable draggable events
-    aspectRatio: 1.8,
+    aspectRatio: 1,
     scrollTime: '07:00', // undo default 6am scrollTime
     header: {
       left: 'today prev,next',
@@ -23,12 +23,29 @@ $(document).ready(function() { // document ready
     resourceGroupField: 'bookeable_type',
     resources: '/admin/bookeables.json',
     events: '/admin/reservations.json',
-    
     selectable: true,
     selectHelper: true,
     select: function(start, end) {
       // TODO!
-      $.getScript('/admin/reservations/new', function() {});
+      $.getScript('/admin/reservations/new')
+        .success(function(script, textStatus) {
+          $('#new_reservation').on('shown.bs.modal', function(e) {
+            $('#new_reservation').find('.start_hidden').value = start.toDate();
+            $('#new_reservation').find('.start_hidden').val(start.toDate());
+            $('#new_reservation').find('.end_hidden').value = end.toDate();
+            $('#new_reservation').find('.end_hidden').val(end.toDate());
+
+            $('#new_reservation').find('.date-range-picker').daterangepicker({
+              timePicker: true,
+              startDate: moment().startOf('hour'),
+              endDate: moment().startOf('hour').add(32, 'hour'),
+              locale: {
+                format: 'M/DD hh:mm A'
+              }            
+            });
+
+          })
+        });
       //calendar.fullCalendar('unselect');
     },
 

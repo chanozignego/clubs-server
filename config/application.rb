@@ -19,6 +19,7 @@ module ClubsServer
     config.autoload_paths += %W(#{config.root}/workers)
     config.autoload_paths += %W(#{config.root}/classes)
     config.autoload_paths += %W(#{config.root}/managers)
+    config.autoload_paths += %W(#{config.root}/serializers)
 
     # Configure sensitive parameters which will be filtered from the log file.
     config.filter_parameters += [:password]

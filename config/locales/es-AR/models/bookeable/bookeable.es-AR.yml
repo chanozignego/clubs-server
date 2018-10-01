@@ -5,6 +5,7 @@ es-AR:
         created_at: Fecha de creación
         updated_at: Ultima actualización
         name: Nombre
+        bookeable_type: Categoría
         unit_price: Precio
         unit_time: Unidad de tiempo
         description: Descripción

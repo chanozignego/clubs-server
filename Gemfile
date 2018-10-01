@@ -74,6 +74,7 @@ gem "carrierwave-base64"
 
 #Calendar
 gem 'momentjs-rails'
+gem 'bootstrap-daterangepicker-rails'
 gem 'fullcalendar'
 
 
