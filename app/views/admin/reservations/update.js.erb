@@ -1,0 +1,13 @@
+$("#json-info").html("<%= j render 'reservation' %>")
+
+$(document).ready(function() {
+  var reservation = $.parseJSON($("#json-info").find("#reservation-info").text());
+  $('#calendar').fullCalendar('removeEvents', [reservation.id]);
+  $('#calendar').fullCalendar(
+    'renderEvent', 
+    reservation,
+    true
+  );
+  $('.modal').modal('hide');
+  app.flash({message: "El turno fue actualizado satisfactoriamente", type: "success"})
+});

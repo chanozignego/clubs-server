@@ -18,6 +18,8 @@
  *= require timeline
  *= require sb-admin-2
  *= require jquery.minicolors
+ *= require jquery-ui
+ *= require daterangepicker
  */
 
  @import "font-awesome";
@@ -25,3 +27,6 @@
 
  @import "admin/common";
  @import "admin/backoffice";
+ @import 'fullcalendar';
+ @import 'fullcalendar/scheduler';
+ @import 'admin/calendar';

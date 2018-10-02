@@ -10,6 +10,7 @@ class BookeableDashboard < ApplicationDashboard
   ATTRIBUTE_TYPES = {
     id: Field::Number,
     name: Field::String,
+    bookeable_type: Field::String,
     unit_price: Field::Number,
     unit_time: Field::Number,
     description: Field::Text,
@@ -27,6 +28,7 @@ class BookeableDashboard < ApplicationDashboard
     :id,
     :unit_price,
     :name,
+    :bookeable_type,
     :unit_time,
     :description,
   ]
@@ -39,6 +41,7 @@ class BookeableDashboard < ApplicationDashboard
     :id,
     :unit_price,
     :name,
+    :bookeable_type,
     :unit_time,
     :description,
   ]
@@ -49,6 +52,7 @@ class BookeableDashboard < ApplicationDashboard
   FORM_ATTRIBUTES = [
     :unit_price,
     :name,
+    :bookeable_type,
     :unit_time,
     :description,
   ]

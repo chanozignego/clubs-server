@@ -1,0 +1,22 @@
+<%= simple_form_for [Administrate::NAMESPACE, @reservation], remote: true do |f| %>
+  <div class="form-inputs">
+    <%= f.input :title %>
+    <%= f.input :user_id, as: :select, collection: User.all, include_blank: true, label_method: :to_s, input_html: {class: "form-control js-select2"} %>
+    <%= f.input :bookeable_id, as: :select, collection: Bookeable.all, include_blank: true, label_method: :bookeable_name, input_html: {class: "form-control js-select2"} %>
+
+    <%= f.input :date_range, as: :string, input_html: { class: "form-control input-sm date-range-picker" } %>
+    <%= f.input_field :start, as: :hidden, class: 'form-control input-sm start_hidden' %>
+    <%= f.input_field :end, as: :hidden, class: 'form-control input-sm end_hidden' %>
+    <%= f.input :color, as: :select, collection: [['Black','black'], ['Green','green'], ['Red','red']] %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+    <%= link_to 'Delete', 
+                [Administrate::NAMESPACE, @reservation], 
+                method: :delete, 
+                class: 'btn btn-danger', 
+                data: { confirm: '¿Está seguro que desea eliminar este turno?' }, 
+                remote: true unless @reservation.new_record? %>
+  </div>
+<% end %>

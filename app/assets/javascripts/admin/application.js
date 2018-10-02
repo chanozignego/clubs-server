@@ -1,5 +1,6 @@
 //= require jquery
 //= require jquery_ujs
+//= require jquery-ui
 //= require inputmask
 //= require jquery.inputmask
 //= require selectize
@@ -24,3 +25,10 @@
 //= require shared/cocoon
 //= require jquery.minicolors
 //= require jquery.minicolors.simple_form
+//= require admin/date_range_picker
+//= require moment 
+//= require daterangepicker
+//= require fullcalendar
+//= require fullcalendar/locale/es
+//= require fullcalendar/scheduler
+//= require admin/calendar
