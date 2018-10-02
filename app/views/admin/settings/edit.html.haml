@@ -10,17 +10,18 @@
 
 .row
   .col-xs-12
-  = simple_form_for(@settings, url: admin_settings_path(), method: :put, html: { class: "form" }) do |f|
+  = simple_form_for(@settings, url: admin_settings_path(@settings), method: :put, html: { class: "form" }) do |f|
 
     .admin-common-panel
       .row.admin-common-panel__header
         .col-xs-12
-          <br>
-          %h4
+          %h5
             Parámetros
+
+      .row.admin-common-panel__content
         .col-md-12
           %b
-            <br>
+
             %h5
               Colores
           .input-group{style: "margin-bottom: 5px;"}
@@ -37,55 +38,61 @@
             <br>
             %h5
               Tipografía
-          .input-group{style: "margin-bottom: 30px;"}
+          .input-group{style: "margin-bottom: 5px;"}
             %span.input-group-addon
             = f.input :typography, as: :string, placeholder: "Tipografía", label: false, required: false, value: f.object.try(:typography), input_html: {class: "form-control"}
 
+    %br
 
     .admin-common-panel
       .row.admin-common-panel__header
-
         .col-xs-12
-          <br>
-          %h4
+          %h5
             Redes Sociales
-            <br>
+
+      .row.admin-common-panel__content
+        .col-md-12
           %b
-            <br>
+
+            %h5
+              Twitter
           .input-group{style: "margin-bottom: 5px;"}
             %span.input-group-addon
             = f.input :twitter_user, as: :string, placeholder: "Usuario de Twitter", label: false, required: false, value: f.object.try(:twitter_user), input_html: {class: "form-control"}
 
           %b
-            <br>
+            %h5
+              Facebook
           .input-group{style: "margin-bottom: 5px;"}
             %span.input-group-addon
             = f.input :facebook_user, as: :string, placeholder: "Usuario de Facebook", label: false, required: false, value: f.object.try(:facebook_user), input_html: {class: "form-control"}
 
           %b
-            <br>
+            %h5
+              Instagram
           .input-group{style: "margin-bottom: 5px;"}
             %span.input-group-addon
             = f.input :instagram_user, as: :string, placeholder: "Usuario de Instagram", label: false, required: false, value: f.object.try(:instagram_user), input_html: {class: "form-control"}
 
           %b
-            <br>
+            %h5
+              Youtube
           .input-group{style: "margin-bottom: 5px;"}
             %span.input-group-addon
             = f.input :youtube_user, as: :string, placeholder: "Usuario de Youtube", label: false, required: false, value: f.object.try(:youtube_user), input_html: {class: "form-control"}
 
 
-    .mt20
-      .row.admin-common-panel__content
-        .col-xs-6.col-sm-6.col-md-4.col-lg-3{style: "padding-left: 0px; padding-right: 2px;"}
-          = button_tag( type: "submit", class: "btn btn-primary full-width") do
-            %span
-              = submit_entity_label(f.object)
-            %i.fa.fa-plus.ml5
+      .mt20
+        .row.admin-common-panel__content
+          .col-xs-6.col-sm-6.col-md-4.col-lg-3{style: "padding-left: 0px; padding-right: 2px;"}
+            = button_tag( type: "submit", class: "btn btn-primary full-width") do
+              %span
+                = submit_entity_label(f.object)
+              %i.fa.fa-plus.ml5
 
-        .col-xs-6.col-sm-6.col-md-4.col-lg-3{style: "padding-left: 2px;"}
-          -# @todo : hacer link_to lista de la entidad
-          = link_to :back, class: "btn btn-danger ml10 full-width" do
-            %span
-              = I18n.t("administrate.actions.cancel")
-            %i.fa.fa-close.ml5
+          .col-xs-6.col-sm-6.col-md-4.col-lg-3{style: "padding-left: 2px;"}
+            -# @todo : hacer link_to lista de la entidad
+            = link_to :back, class: "btn btn-danger ml10 full-width" do
+              %span
+                = I18n.t("administrate.actions.cancel")
+              %i.fa.fa-close.ml5
