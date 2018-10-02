@@ -24,7 +24,7 @@
 
 input[type='color']{
   padding: 0px;
-  width: 20%;  
+  width: 20%;
 }
 .image-preview{margin-bottom: 20px;}
 
@@ -39,7 +39,7 @@ input[type='color']{
     height: 20px;
     &.select-option{
       position: relative;
-      top: 4px;      
+      top: 4px;
     }
     position: relative;
     top: 5px;
@@ -65,12 +65,12 @@ input[type='color']{
   color: #a94442;
 }
 
-.no-arrows::-webkit-inner-spin-button, 
-.no-arrows::-webkit-outer-spin-button { 
+.no-arrows::-webkit-inner-spin-button,
+.no-arrows::-webkit-outer-spin-button {
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
-    margin: 0; 
+    margin: 0;
 }
 
 .no-arrows {
@@ -87,7 +87,7 @@ input[type='color']{
     }
     i{
       margin: 0px 10px;
-      cursor: pointer; 
+      cursor: pointer;
     }
   }
 }

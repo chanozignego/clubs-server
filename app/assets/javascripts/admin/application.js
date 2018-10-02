@@ -23,7 +23,8 @@
 //= require sb-admin-2
 //= require shared/mass_assignment
 //= require shared/cocoon
-
+//= require jquery.minicolors
+//= require jquery.minicolors.simple_form
 //= require admin/date_range_picker
 //= require moment 
 //= require daterangepicker

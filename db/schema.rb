@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180928202051) do
+ActiveRecord::Schema.define(version: 20181002180458) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -97,6 +97,20 @@ ActiveRecord::Schema.define(version: 20180928202051) do
 
   add_index "reservations", ["bookeable_id"], name: "index_reservations_on_bookeable_id", using: :btree
   add_index "reservations", ["user_id"], name: "index_reservations_on_user_id", using: :btree
+
+  create_table "settings", force: :cascade do |t|
+    t.string   "primary_color"
+    t.string   "secondary_color"
+    t.string   "typography"
+    t.string   "twitter_user"
+    t.string   "facebook_user"
+    t.string   "instagram_user"
+    t.string   "youtube_user"
+    t.integer  "singleton_guard", default: 0
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
+    t.string   "logo"
+  end
 
   create_table "site_contents", force: :cascade do |t|
     t.string   "tag"

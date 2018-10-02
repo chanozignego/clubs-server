@@ -26,3 +26,5 @@
 //= require shared/app
 //= require initializers/bootstrap_notify
 //= require shared/common
+//= require jquery.minicolors
+//= require jquery.minicolors.simple_form

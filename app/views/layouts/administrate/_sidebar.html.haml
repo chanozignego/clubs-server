@@ -11,3 +11,8 @@
           = link_to [:admin, resource], class: "sidebar__link sidebar__link--#{nav_link_state(resource)}" do
             %i.fa.fa-table.fa-fw
             = display_resource_name(resource)
+
+      %li
+        = link_to admin_settings_edit_path, class: "sidebar__link #{active_sidebar(:settings)}" do
+          %i.fa.fa-cog.fa-fw
+          = Settings.model_name.human

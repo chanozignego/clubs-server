@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+gem 'jquery-minicolors-rails'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.10'
 # Use postgresql as the database for Active Record
@@ -23,7 +24,7 @@ gem 'kaminari'                      # Pagination
 gem 'searchlight'
 
 gem 'js-routes'
-gem "i18n-js", ">= 3.0.0.rc8" 
+gem "i18n-js", ">= 3.0.0.rc8"
 
 gem 'thin'                          # Server
 
@@ -84,11 +85,11 @@ group :development, :test do
   # Testing
   gem 'factory_girl_rails'
   gem 'rspec-rails'
-  gem 'shoulda-matchers', '~> 3.0', require: false 
+  gem 'shoulda-matchers', '~> 3.0', require: false
   gem 'database_cleaner', '~> 1.5'
   #gem 'capybara'
   gem 'faker'
-  
+
   #Doc
   gem 'annotate'
   gem 'yard'
