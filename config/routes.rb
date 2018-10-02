@@ -26,6 +26,11 @@ Rails.application.routes.draw do
       put :update_password
     end
 
+    resources :users, only: [] do
+      get :change_password
+      put :update_password
+    end
+
     resources :temporal_images, only: :create
 
     root controller: DashboardManifest::ROOT_DASHBOARD, action: :index
