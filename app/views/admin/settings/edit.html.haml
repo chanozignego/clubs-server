@@ -24,9 +24,8 @@
             %h5
               %b Logo
 
-          - image = f.object.logo
-          - if image.present?
-            = image_tag image.try(:thumb)
+          - if f.object.try(:logo).present?
+            = image_tag f.object.try(:logo).try(:thumb)
             %br
             %br
             = f.input :logo, as: :file,placeholder: "Logo", label: false, required: false, value: f.object.try(:logo)
