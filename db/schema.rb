@@ -50,12 +50,13 @@ ActiveRecord::Schema.define(version: 20181002180458) do
   add_index "authorizeds", ["user_id"], name: "index_authorizeds_on_user_id", using: :btree
 
   create_table "bookeables", force: :cascade do |t|
-    t.string   "name",        default: "",  null: false
-    t.decimal  "unit_price",  default: 1.0, null: false
-    t.decimal  "unit_time",   default: 1.0, null: false
-    t.string   "description", default: "",  null: false
-    t.datetime "created_at",                null: false
-    t.datetime "updated_at",                null: false
+    t.string   "name",           default: "",  null: false
+    t.decimal  "unit_price",     default: 1.0, null: false
+    t.decimal  "unit_time",      default: 1.0, null: false
+    t.string   "description",    default: "",  null: false
+    t.datetime "created_at",                   null: false
+    t.datetime "updated_at",                   null: false
+    t.string   "bookeable_type"
   end
 
   create_table "events", force: :cascade do |t|
@@ -73,20 +74,25 @@ ActiveRecord::Schema.define(version: 20181002180458) do
     t.string   "summary"
     t.text     "body",                         null: false
     t.string   "author"
-    t.datetime "date",                         null: false
     t.datetime "created_at",                   null: false
     t.datetime "updated_at",                   null: false
     t.string   "principal_image"
+    t.datetime "date"
   end
 
   create_table "reservations", force: :cascade do |t|
     t.integer  "user_id"
     t.integer  "bookeable_id"
-    t.datetime "date",         null: false
+    t.datetime "date",                      null: false
     t.decimal  "time_used"
     t.string   "comments"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
+    t.string   "title",        default: "", null: false
+    t.string   "date_range",   default: "", null: false
+    t.datetime "start"
+    t.datetime "end"
+    t.string   "color"
   end
 
   add_index "reservations", ["bookeable_id"], name: "index_reservations_on_bookeable_id", using: :btree
