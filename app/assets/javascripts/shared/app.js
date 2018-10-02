@@ -47,7 +47,7 @@
         xhr.send(formData);
       }
     });
-    tinymce.PluginManager.load('es', '/assets/admin/langs/es.js');
+    tinymce.PluginManager.load('es', '/assets/javascripts/langs/es.js');
   };
 
   app.startClearFormButton = function(context) {
