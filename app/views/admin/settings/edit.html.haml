@@ -28,7 +28,7 @@
             = image_tag f.object.try(:logo).try(:thumb)
             %br
             %br
-            = f.input :logo, as: :file,placeholder: "Logo", label: false, required: false, value: f.object.try(:logo)
+          = f.input :logo, as: :file,placeholder: "Logo", label: false, required: false, value: f.object.try(:logo)
 
 
       .row.admin-common-panel__content
