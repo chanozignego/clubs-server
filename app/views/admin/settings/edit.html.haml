@@ -15,7 +15,7 @@
     .admin-common-panel
       .row.admin-common-panel__header
         .col-xs-12
-          %h5
+          %h4
             Parámetros
 
       .row.admin-common-panel__content
@@ -23,21 +23,18 @@
           %b
 
             %h5
-              Colores
-          .input-group{style: "margin-bottom: 5px;"}
-            %span.input-group-addon
-            = f.input :primary_color, as: :string, placeholder: "Color Primario", label: false, required: false, value: f.object.try(:primary_color), input_html: {class: "form-control"}
+              <b>Colores</b>
+
+          .input-group{style: "margin-bottom: 5px;display:flex;"}
+            %h5{style:"padding-right:10px"} Primario:
+            = f.input :primary_color, as: :minicolors, input_html: {data: {minicolors: {theme: :bootstrap, position: :right}}}, placeholder: "Color secundario", label: false, required: false, value: f.object.try(:primary_color)
+            %h5{style:"padding-right:10px;padding-left:10px"} Secundario:
+            = f.input :secondary_color, as: :minicolors, input_html: {data: {minicolors: {theme: :bootstrap, position: :right}}}, placeholder: "Color secundario", label: false, required: false, value: f.object.try(:primary_color)
 
           %b
-            <br>
-          .input-group{style: "margin-bottom: 5px;"}
-            %span.input-group-addon
-            = f.input :secondary_color, as: :string, placeholder: "Color secundario", label: false, required: false, value: f.object.try(:secondary_color), input_html: {class: "form-control"}
 
-          %b
-            <br>
             %h5
-              Tipografía
+              <b>Tipografía</b>
           .input-group{style: "margin-bottom: 5px;"}
             %span.input-group-addon
             = f.input :typography, as: :string, placeholder: "Tipografía", label: false, required: false, value: f.object.try(:typography), input_html: {class: "form-control"}
@@ -47,7 +44,7 @@
     .admin-common-panel
       .row.admin-common-panel__header
         .col-xs-12
-          %h5
+          %h4
             Redes Sociales
 
       .row.admin-common-panel__content

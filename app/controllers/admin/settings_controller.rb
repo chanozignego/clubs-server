@@ -26,6 +26,6 @@ module Admin
         permit(:primary_color, :secondary_color, :typography, :twitter_user, :facebook_user, :instagram_user, :youtube_user)
     end
 
-  
+
   end
 end
