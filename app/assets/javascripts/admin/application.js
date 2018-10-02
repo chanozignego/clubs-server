@@ -1,5 +1,6 @@
 //= require jquery
 //= require jquery_ujs
+//= require jquery-ui
 //= require inputmask
 //= require jquery.inputmask
 //= require selectize
@@ -22,4 +23,12 @@
 //= require sb-admin-2
 //= require shared/mass_assignment
 //= require shared/cocoon
+//= require admin/langs/es.js
 
+//= require admin/date_range_picker
+//= require moment 
+//= require daterangepicker
+//= require fullcalendar
+//= require fullcalendar/locale/es
+//= require fullcalendar/scheduler
+//= require admin/calendar

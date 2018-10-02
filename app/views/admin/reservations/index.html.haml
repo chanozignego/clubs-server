@@ -1,0 +1,25 @@
+= render 'header', page: page, show_buttons: true
+/ - if search
+/   .row.search-form-container
+/     .col-xs-12
+/       = render 'search_form', search: search
+
+- if resources.present?
+  / .row
+  /   .col-xs-12
+  /     = render "mass_assignment_dropdown"
+      
+  / .row
+  /   .col-xs-12{style: "margin-top: -15px;"}
+  /     = render "collection_with_mass_assignment_form", collection_presenter: page, resources: resources
+  /     .text-center{style: "margin-top: -30px; margin-botom: -20px;"}
+  /       = paginate resources
+
+
+  .row
+    .col-md-12
+      #calendar
+      #json-info{style: "visibility: hidden;"}
+
+
+#remote_container

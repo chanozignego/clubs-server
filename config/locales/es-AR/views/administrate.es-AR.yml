@@ -32,6 +32,7 @@ es-AR:
       change_password: Cambiar contraseña
       export_to_excel: Exportar a excel
     filters: Filtros
+    items_not_found: No se encontraron elementos
     fields:
       boolean: 
         true_value: "Si"

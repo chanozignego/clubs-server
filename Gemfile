@@ -12,6 +12,7 @@ gem 'uglifier', '>= 1.3.0'
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 gem 'jquery-inputmask-rails', github: 'knapo/jquery-inputmask-rails'
+gem 'jquery-ui-rails'
 
 gem 'active_model_serializers'
 
@@ -70,6 +71,12 @@ gem 'to_xls-rails'
 gem "mini_magick"
 gem "carrierwave"
 gem "carrierwave-base64"
+
+#Calendar
+gem 'momentjs-rails'
+gem 'bootstrap-daterangepicker-rails'
+gem 'fullcalendar'
+
 
 group :development, :test do
   #Manage ENV variables
