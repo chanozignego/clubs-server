@@ -1,60 +1,25 @@
 = render 'header', page: page, show_buttons: true
-- if search
-  .row.search-form-container
-    .col-xs-12
-      = render 'search_form', search: search
+/ - if search
+/   .row.search-form-container
+/     .col-xs-12
+/       = render 'search_form', search: search
 
 - if resources.present?
-  .row
-    .col-xs-12
-      = render "mass_assignment_dropdown"
+  / .row
+  /   .col-xs-12
+  /     = render "mass_assignment_dropdown"
       
+  / .row
+  /   .col-xs-12{style: "margin-top: -15px;"}
+  /     = render "collection_with_mass_assignment_form", collection_presenter: page, resources: resources
+  /     .text-center{style: "margin-top: -30px; margin-botom: -20px;"}
+  /       = paginate resources
+
+
   .row
-    .col-xs-12{style: "margin-top: -15px;"}
-      = render "collection_with_mass_assignment_form", collection_presenter: page, resources: resources
-      .text-center{style: "margin-top: -30px; margin-botom: -20px;"}
-        = paginate resources
-
-
-
-
-    %br
-    %br
-    %br
-    %br
-    %br
-    %br
-    %br
-    %br
-    %br
-    %br
-
-
-    / / START CONTENT
-    / .content
-    /   / ////////////////////////////////////////////////////////////////////////////
-    /   / START CONTAINER
-    /   .calendar-layout.clearfix
-    /     / .col-md-2
-    /     /   #external-events
-    /     /     %h6.font-title
-    /     /       %i.fa.fa-arrows
-    /     /       DRAGGABLE EVENTS
-    /     /     %p Drag into calendar
-    /     /     .fc-event Meeting with Developer Team
-    /     /     .fc-event Office Party
-    /     /     .fc-event March Invoices
-    /     /     .fc-event Call John
-    /     /     .fc-event Dinner with Team
-    /     /     .fc-event Design an iOS App
-    /     /     .fc-event Make a Sandwich
-    /     /     .fc-event Meeting with Customers
-    /     .col-md-12
-    /     / #calendar
-    /   / END CONTAINER
-    /   / ////////////////////////////////////////////////////////////////////////////
-    /   .col-md-12
-    #calendar
+    .col-md-12
+      #calendar
+      #json-info{style: "visibility: hidden;"}
 
 
 #remote_container

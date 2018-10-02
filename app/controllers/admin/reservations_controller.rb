@@ -10,26 +10,31 @@ module Admin
         format.json { render json: scoped_collection}
       end
     end
-
     
     def new
       @reservation = Reservation.new
     end
 
     def edit
-      @reservation = Reservation.new
+      set_reservation
     end
 
     def create
       @reservation = Reservation.new(reservation_params)
+      @reservation.date = @reservation.start
       @reservation.save
+      @json_reservation = ReservationSerializer.new(@reservation).to_json
     end
 
     def update
+      set_reservation
       @reservation.update(reservation_params)
+      @json_reservation = ReservationSerializer.new(@reservation).to_json
     end
 
     def destroy
+      set_reservation
+      @json_reservation = ReservationSerializer.new(@reservation).to_json
       @reservation.destroy
     end
 
@@ -39,7 +44,7 @@ module Admin
       end
 
       def reservation_params
-        params.require(:reservation).permit(:title, :date_range, :start, :end, :color)
+        params.require(:reservation).permit(:title, :user_id, :bookeable_id, :date_range, :start, :end, :color)
       end
 
   end

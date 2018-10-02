@@ -7,4 +7,8 @@ class Bookeable < ActiveRecord::Base
     name
   end
 
+  def bookeable_name
+    "#{bookeable_type} - #{name}"
+  end 
+
 end
