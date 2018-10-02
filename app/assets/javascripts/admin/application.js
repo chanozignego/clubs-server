@@ -23,6 +23,7 @@
 //= require sb-admin-2
 //= require shared/mass_assignment
 //= require shared/cocoon
+//= require admin/langs/es
 
 //= require admin/date_range_picker
 //= require moment 
