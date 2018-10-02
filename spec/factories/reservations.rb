@@ -10,6 +10,11 @@
 #  comments     :string
 #  created_at   :datetime         not null
 #  updated_at   :datetime         not null
+#  title        :string           default(""), not null
+#  date_range   :string           default(""), not null
+#  start        :datetime
+#  end          :datetime
+#  color        :string
 #
 
 FactoryGirl.define do
