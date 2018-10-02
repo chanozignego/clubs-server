@@ -4,4 +4,7 @@ class Settings < ActiveRecord::Base
   def self.instance
     Settings.first || Settings.create
   end
+
+  mount_uploader :logo, ImageUploader
+
 end

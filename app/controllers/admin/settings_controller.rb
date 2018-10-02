@@ -23,7 +23,7 @@ module Admin
 
     def settings_params
       params[:settings].
-        permit(:primary_color, :secondary_color, :typography, :twitter_user, :facebook_user, :instagram_user, :youtube_user)
+        permit(:primary_color, :secondary_color, :typography, :twitter_user, :facebook_user, :instagram_user, :youtube_user, :logo)
     end
 
 

@@ -17,6 +17,14 @@
         .col-xs-12
           %h4
             Parámetros
+      .row.admin-common-panel__content
+        .col-md-12
+          %b
+
+            %h5
+              <b>Logo</b>
+            = f.input :logo, as: :file,placeholder: "Logo", label: false, required: false, value: f.object.try(:logo)
+
 
       .row.admin-common-panel__content
         .col-md-12
