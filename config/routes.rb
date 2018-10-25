@@ -9,8 +9,7 @@ Rails.application.routes.draw do
     unlocks: 'admin/devise/unlocks'
   }
 
-
-
+  # Backoffice
   namespace :admin do
 
       get "/settings", to: "settings#show"
@@ -44,9 +43,45 @@ Rails.application.routes.draw do
     root controller: DashboardManifest::ROOT_DASHBOARD, action: :index
   end
 
+  # API
+  namespace :api do
+
+    namespace :v1 do
+
+      resources :posts, only: [:index, :show, :create, :update]
+
+      # resource :valuation_settings, only: :show do 
+      #   get :calculate_price
+      # end 
+      # resource :settings, only: [] do 
+      #   get :places
+      # end 
+      # resource :location_request, only: :create
+      # resources :users, only: [:show, :create, :update] do
+      #   member do
+      #     get :shipments
+      #     post :change_picture
+      #     get :messages
+      #     post :request_checking_account
+      #     post :add_user
+      #     post :quit_user
+      #     post :invite_user
+      #     put :billing_info
+      #   end
+      # end
+  
+    end
+
+  end
+
   #Sidekiq Web
   authenticate :admin_user, lambda { |u| u.present? } do
     mount Sidekiq::Web => '/sidekiq'
+  end
+
+  ## APIPIE ## 
+  authenticate :admin_user, lambda { |u| u.present? } do
+    apipie
   end
 
   root to: "admin/#{DashboardManifest::ROOT_DASHBOARD}#index"

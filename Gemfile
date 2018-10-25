@@ -15,22 +15,36 @@ gem 'jquery-rails'
 gem 'jquery-inputmask-rails', github: 'knapo/jquery-inputmask-rails'
 gem 'jquery-ui-rails'
 
-gem 'active_model_serializers'
-
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0', group: :doc
 
-gem 'kaminari'                      # Pagination
+# RailsAPI
+gem 'rails-api'
+
+# ApiPie por API documentation
+gem 'apipie-rails'
+
+# Active Model Serializer
+gem 'active_model_serializers'
+
+# Pagination
+gem 'kaminari'                      
 gem 'searchlight'
+gem 'api-pagination'
 
 gem 'js-routes'
 gem "i18n-js", ">= 3.0.0.rc8"
+
+gem 'rack-cors', :require => 'rack/cors'
 
 gem 'thin'                          # Server
 
 gem "cocoon"
 
-gem 'devise' #Login
+# Login
+gem 'devise' 
+gem 'devise_token_auth'
+gem 'omniauth'
 gem 'pundit'
 gem 'administrate', '0.1.2'
 
