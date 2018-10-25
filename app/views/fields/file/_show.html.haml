@@ -1,5 +1,8 @@
-- file = field.data.send(field.attribute)
+- file = field.data
 - if file.present?
+  = image_tag file, width: 75, height: 100
+  %br
+- else
   = image_tag "file-image.png", width: 75, height: 100
   %br
 = file.try(:original_filename) || field.data
