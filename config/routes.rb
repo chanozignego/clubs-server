@@ -48,7 +48,8 @@ Rails.application.routes.draw do
 
     namespace :v1 do
 
-      resources :posts, only: [:index, :show, :create, :update]
+      resources :posts, only: [:index, :show]
+      resources :events, only: [:index, :show]
 
       # resource :valuation_settings, only: :show do 
       #   get :calculate_price
