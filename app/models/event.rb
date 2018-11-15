@@ -12,5 +12,8 @@
 #
 
 class Event < ActiveRecord::Base
+
+  mount_uploader :image, PictureUploader
+
   validates :name, :place, :date, presence: true
 end

@@ -10,6 +10,7 @@ class EventDashboard < ApplicationDashboard
   ATTRIBUTE_TYPES = {
     id: Field::Number,
     name: Field::String,
+    image: Field::File,
     description: Field::RichText,
     place: Field::String,
     date: Field::DateTime,
@@ -37,6 +38,7 @@ class EventDashboard < ApplicationDashboard
     :id,
     :date,
     :name,
+    :image,
     :place,
     :description
   ]
@@ -47,6 +49,7 @@ class EventDashboard < ApplicationDashboard
   FORM_ATTRIBUTES = [
     :date,
     :name,
+    :image,
     :place,
     :description
   ]
