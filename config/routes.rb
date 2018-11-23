@@ -50,6 +50,7 @@ Rails.application.routes.draw do
 
       resources :posts, only: [:index, :show]
       resources :events, only: [:index, :show]
+      resources :authorizeds, only: [:index, :show, :create, :update, :destroy]
 
       # resource :valuation_settings, only: :show do 
       #   get :calculate_price

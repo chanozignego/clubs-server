@@ -8,6 +8,7 @@ es-AR:
         name: Nombre
         place: Ubicación
         date: Fecha
+        image: Imágen
         remember_me: Recordarme
         id_eq: Id
         name_cont: Nombre
