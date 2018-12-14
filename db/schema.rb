@@ -11,10 +11,34 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20181115154205) do
+ActiveRecord::Schema.define(version: 20181214154453) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "adds", force: :cascade do |t|
+    t.string   "home_add"
+    t.string   "home_add_mobile"
+    t.string   "post_add1"
+    t.string   "post_add2"
+    t.string   "post_add_mobile"
+    t.string   "service_add1"
+    t.string   "service_add2"
+    t.string   "service_add3"
+    t.string   "service_add_mobile"
+    t.string   "emergency_add1"
+    t.string   "emergency_add2"
+    t.string   "emergency_add3"
+    t.string   "emergency_add_mobile"
+    t.string   "event_add1"
+    t.string   "event_add2"
+    t.string   "event_add_mobile"
+    t.string   "live_add1"
+    t.string   "live_add_mobile"
+    t.integer  "singleton_guard",      default: 0
+    t.datetime "created_at",                       null: false
+    t.datetime "updated_at",                       null: false
+  end
 
   create_table "admin_users", force: :cascade do |t|
     t.string   "first_name"
@@ -75,10 +99,10 @@ ActiveRecord::Schema.define(version: 20181115154205) do
     t.string   "summary"
     t.text     "body",                         null: false
     t.string   "author"
+    t.datetime "date",                         null: false
     t.datetime "created_at",                   null: false
     t.datetime "updated_at",                   null: false
     t.string   "principal_image"
-    t.datetime "date"
   end
 
   create_table "reservations", force: :cascade do |t|

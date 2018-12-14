@@ -16,6 +16,10 @@ Rails.application.routes.draw do
       get "/settings/edit", to: "settings#edit"
       put "/settings", to: "settings#update"
 
+      get "/adds", to: "adds#show"
+      get "/adds/edit", to: "adds#edit"
+      put "/adds", to: "adds#update"
+
     DashboardManifest::DASHBOARDS.each do |dashboard_resource|
       resources dashboard_resource
 
@@ -51,12 +55,12 @@ Rails.application.routes.draw do
       resources :posts, only: [:index, :show]
       resources :events, only: [:index, :show]
 
-      # resource :valuation_settings, only: :show do 
+      # resource :valuation_settings, only: :show do
       #   get :calculate_price
-      # end 
-      # resource :settings, only: [] do 
+      # end
+      # resource :settings, only: [] do
       #   get :places
-      # end 
+      # end
       # resource :location_request, only: :create
       # resources :users, only: [:show, :create, :update] do
       #   member do
@@ -70,7 +74,7 @@ Rails.application.routes.draw do
       #     put :billing_info
       #   end
       # end
-  
+
     end
 
   end
@@ -80,7 +84,7 @@ Rails.application.routes.draw do
     mount Sidekiq::Web => '/sidekiq'
   end
 
-  ## APIPIE ## 
+  ## APIPIE ##
   authenticate :admin_user, lambda { |u| u.present? } do
     apipie
   end

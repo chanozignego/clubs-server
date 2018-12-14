@@ -1,0 +1,395 @@
+%header.row.admin-header__container
+  .col-xs-12.admin-header
+    .center-vertical
+      %h5.admin-header__breadcrumb
+        = link_to Adds.model_name.human, admin_adds_edit_path
+        = ">"
+        = "Ver Configuración"
+      %h1.admin-header__title
+        = Adds.model_name.human
+
+.row
+  .col-xs-12
+  = simple_form_for(@adds, url: admin_adds_path(@adds), method: :put, html: { class: "form" }) do |f|
+
+    .admin-common-panel
+      .row.admin-common-panel__header
+        .col-xs-12
+          %h4
+            Pagina principal
+      .row.admin-common-panel__content
+        .col-md-12
+          %b
+
+            %h5
+              %b Nuestros sponsors (1 x 6)
+
+          - if f.object.try(:home_add).present?
+            = image_tag f.object.try(:home_add).try(:thumb)
+            %br
+            %br
+          = f.input :home_add, as: :file,placeholder: "home_add", label: false, required: false, value: f.object.try(:home_add)
+
+        .row.admin-common-panel__content
+          .col-md-12
+            %b
+
+              %h5
+                %b Publicidad mobile (1 x 4)
+
+            - if f.object.try(:home_add).present?
+              = image_tag f.object.try(:home_add_mobile).try(:thumb)
+              %br
+              %br
+            = f.input :home_add_mobile, as: :file,placeholder: "home_add_mobile", label: false, required: false, value: f.object.try(:home_add_mobile)
+
+
+    %br
+
+    .row
+      .col-xs-12
+      = simple_form_for(@adds, url: admin_adds_path(@adds), method: :put, html: { class: "form" }) do |f|
+
+        .admin-common-panel
+          .row.admin-common-panel__header
+            .col-xs-12
+              %h4
+                Noticias
+          .row.admin-common-panel__content
+            .col-md-12
+              %b
+
+                %h5
+                  %b Publicidad superior
+
+              - if f.object.try(:post_add1).present?
+                = image_tag f.object.try(:post_add1).try(:thumb)
+                %br
+                %br
+              = f.input :post_add1, as: :file,placeholder: "post_add1", label: false, required: false, value: f.object.try(:post_add1)
+
+            .row.admin-common-panel__content
+              .col-md-12
+                %b
+
+                  %h5
+                    %b Publicidad inferior
+
+                - if f.object.try(:post_add2).present?
+                  = image_tag f.object.try(:post_add2).try(:thumb)
+                  %br
+                  %br
+                = f.input :post_add2, as: :file,placeholder: "post_add2", label: false, required: false, value: f.object.try(:post_add2)
+
+              .row.admin-common-panel__content
+                .col-md-12
+                  %b
+
+                    %h5
+                      %b Publicidad mobile
+
+                  - if f.object.try(:post_add_mobile).present?
+                    = image_tag f.object.try(:post_add_mobile).try(:thumb)
+                    %br
+                    %br
+                  = f.input :post_add_mobile, as: :file,placeholder: "post_add_mobile", label: false, required: false, value: f.object.try(:post_add_mobile)
+
+
+        %br
+
+    .row
+      .col-xs-12
+      = simple_form_for(@adds, url: admin_adds_path(@adds), method: :put, html: { class: "form" }) do |f|
+
+        .admin-common-panel
+          .row.admin-common-panel__header
+            .col-xs-12
+              %h4
+                Eventos
+          .row.admin-common-panel__content
+            .col-md-12
+              %b
+
+                %h5
+                  %b Publicidad superior
+
+              - if f.object.try(:event_add1).present?
+                = image_tag f.object.try(:event_add1).try(:thumb)
+                %br
+                %br
+              = f.input :event_add1, as: :file,placeholder: "event_add1", label: false, required: false, value: f.object.try(:event_add1)
+
+            .row.admin-common-panel__content
+              .col-md-12
+                %b
+
+                  %h5
+                    %b Publicidad inferior
+
+                - if f.object.try(:event_add2).present?
+                  = image_tag f.object.try(:event_add2).try(:thumb)
+                  %br
+                  %br
+                = f.input :event_add2, as: :file,placeholder: "event_add2", label: false, required: false, value: f.object.try(:event_add2)
+
+              .row.admin-common-panel__content
+                .col-md-12
+                  %b
+
+                    %h5
+                      %b Publicidad mobile
+
+                  - if f.object.try(:event_add_mobile).present?
+                    = image_tag f.object.try(:event_add_mobile).try(:thumb)
+                    %br
+                    %br
+                  = f.input :event_add_mobile, as: :file,placeholder: "event_add_mobile", label: false, required: false, value: f.object.try(:event_add_mobile)
+
+
+
+        %br
+    .row
+      .col-xs-12
+      = simple_form_for(@adds, url: admin_adds_path(@adds), method: :put, html: { class: "form" }) do |f|
+
+        .admin-common-panel
+          .row.admin-common-panel__header
+            .col-xs-12
+              %h4
+                Deportes
+          .row.admin-common-panel__content
+            .col-md-12
+              %b
+
+                %h5
+                  %b Publicidad superior
+
+              - if f.object.try(:sport_add1).present?
+                = image_tag f.object.try(:sport_add1).try(:thumb)
+                %br
+                %br
+              = f.input :sport_add1, as: :file,placeholder: "sport_add1", label: false, required: false, value: f.object.try(:sport_add1)
+
+            .row.admin-common-panel__content
+              .col-md-12
+                %b
+
+                  %h5
+                    %b Publicidad Central
+
+                - if f.object.try(:sport_add2).present?
+                  = image_tag f.object.try(:sport_add2).try(:thumb)
+                  %br
+                  %br
+                = f.input :sport_add2, as: :file,placeholder: "sport_add2", label: false, required: false, value: f.object.try(:sport_add2)
+
+              .row.admin-common-panel__content
+                .col-md-12
+                  %b
+
+                    %h5
+                      %b Publicidad Inferior
+
+                  - if f.object.try(:sport_add3).present?
+                    = image_tag f.object.try(:sport_add3).try(:thumb)
+                    %br
+                    %br
+                  = f.input :sport_add3, as: :file,placeholder: "sport_add3", label: false, required: false, value: f.object.try(:sport_add3)
+
+                .row.admin-common-panel__content
+                  .col-md-12
+                    %b
+
+                      %h5
+                        %b Publicidad mobile
+
+                    - if f.object.try(:sport_add_mobile).present?
+                      = image_tag f.object.try(:sport_add_mobile).try(:thumb)
+                      %br
+                      %br
+                    = f.input :sport_add_mobile, as: :file,placeholder: "sport_add_mobile", label: false, required: false, value: f.object.try(:sport_add_mobile)
+
+
+        %br
+
+    .row
+      .col-xs-12
+      = simple_form_for(@adds, url: admin_adds_path(@adds), method: :put, html: { class: "form" }) do |f|
+
+        .admin-common-panel
+          .row.admin-common-panel__header
+            .col-xs-12
+              %h4
+                Emergencias
+          .row.admin-common-panel__content
+            .col-md-12
+              %b
+
+                %h5
+                  %b Publicidad superior
+
+              - if f.object.try(:emergency_add1).present?
+                = image_tag f.object.try(:emergency_add1).try(:thumb)
+                %br
+                %br
+              = f.input :emergency_add1, as: :file,placeholder: "emergency_add1", label: false, required: false, value: f.object.try(:emergency_add1)
+
+            .row.admin-common-panel__content
+              .col-md-12
+                %b
+
+                  %h5
+                    %b Publicidad Central
+
+                - if f.object.try(:emergency_add2).present?
+                  = image_tag f.object.try(:emergency_add2).try(:thumb)
+                  %br
+                  %br
+                = f.input :emergency_add2, as: :file,placeholder: "emergency_add2", label: false, required: false, value: f.object.try(:emergency_add2)
+
+              .row.admin-common-panel__content
+                .col-md-12
+                  %b
+
+                    %h5
+                      %b Publicidad Inferior
+
+                  - if f.object.try(:emergency_add3).present?
+                    = image_tag f.object.try(:emergency_add3).try(:thumb)
+                    %br
+                    %br
+                  = f.input :emergency_add3, as: :file,placeholder: "emergency_add3", label: false, required: false, value: f.object.try(:emergency_add3)
+
+                .row.admin-common-panel__content
+                  .col-md-12
+                    %b
+
+                      %h5
+                        %b Publicidad mobile
+
+                    - if f.object.try(:emergency_add_mobile).present?
+                      = image_tag f.object.try(:emergency_add_mobile).try(:thumb)
+                      %br
+                      %br
+                    = f.input :emergency_add_mobile, as: :file,placeholder: "emergency_add_mobile", label: false, required: false, value: f.object.try(:emergency_add_mobile)
+
+
+        %br
+
+    .row
+      .col-xs-12
+      = simple_form_for(@adds, url: admin_adds_path(@adds), method: :put, html: { class: "form" }) do |f|
+
+        .admin-common-panel
+          .row.admin-common-panel__header
+            .col-xs-12
+              %h4
+                Servicios
+          .row.admin-common-panel__content
+            .col-md-12
+              %b
+
+                %h5
+                  %b Publicidad superior
+
+              - if f.object.try(:service_add1).present?
+                = image_tag f.object.try(:service_add1).try(:thumb)
+                %br
+                %br
+              = f.input :service_add1, as: :file,placeholder: "service_add1", label: false, required: false, value: f.object.try(:service_add1)
+
+            .row.admin-common-panel__content
+              .col-md-12
+                %b
+
+                  %h5
+                    %b Publicidad Central
+
+                - if f.object.try(:post_add2).present?
+                  = image_tag f.object.try(:service_add2).try(:thumb)
+                  %br
+                  %br
+                = f.input :service_add2, as: :file,placeholder: "service_add2", label: false, required: false, value: f.object.try(:service_add2)
+
+              .row.admin-common-panel__content
+                .col-md-12
+                  %b
+
+                    %h5
+                      %b Publicidad Inferior
+
+                  - if f.object.try(:service_add3).present?
+                    = image_tag f.object.try(:service_add3).try(:thumb)
+                    %br
+                    %br
+                  = f.input :service_add3, as: :file,placeholder: "service_add3", label: false, required: false, value: f.object.try(:service_add3)
+
+                .row.admin-common-panel__content
+                  .col-md-12
+                    %b
+
+                      %h5
+                        %b Publicidad mobile
+
+                    - if f.object.try(:service_add_mobile).present?
+                      = image_tag f.object.try(:service_add_mobile).try(:thumb)
+                      %br
+                      %br
+                    = f.input :service_add_mobile, as: :file,placeholder: "service_add_mobile", label: false, required: false, value: f.object.try(:service_add_mobile)
+
+
+        %br
+
+    .row
+      .col-xs-12
+      = simple_form_for(@adds, url: admin_adds_path(@adds), method: :put, html: { class: "form" }) do |f|
+
+        .admin-common-panel
+          .row.admin-common-panel__header
+            .col-xs-12
+              %h4
+                En vivo
+          .row.admin-common-panel__content
+            .col-md-12
+              %b
+
+                %h5
+                  %b Nuestros sponsors (1 x 6)
+
+              - if f.object.try(:home_add).present?
+                = image_tag f.object.try(:live_add1).try(:thumb)
+                %br
+                %br
+              = f.input :live_add1, as: :file,placeholder: "live_add1", label: false, required: false, value: f.object.try(:live_add1)
+
+            .row.admin-common-panel__content
+              .col-md-12
+                %b
+
+                  %h5
+                    %b Publicidad mobile (1 x 4)
+
+                - if f.object.try(:home_add).present?
+                  %br
+                  %br
+                  = f.input :live_add_mobile, as: :file,placeholder: "live_add_mobile", label: false, required: false, value: f.object.try(:live_add_mobile)
+
+
+
+        %br
+
+
+    .mt20
+      .row.admin-common-panel__content
+        .col-xs-6.col-sm-6.col-md-4.col-lg-3{style: "padding-left: 0px; padding-right: 2px;"}
+          = button_tag( type: "submit", class: "btn btn-primary full-width") do
+            %span
+              = submit_entity_label(f.object)
+            %i.fa.fa-plus.ml5
+
+        .col-xs-6.col-sm-6.col-md-4.col-lg-3{style: "padding-left: 2px;"}
+          -# @todo : hacer link_to lista de la entidad
+          = link_to :back, class: "btn btn-danger ml10 full-width" do
+            %span
+              = I18n.t("administrate.actions.cancel")
+            %i.fa.fa-close.ml5

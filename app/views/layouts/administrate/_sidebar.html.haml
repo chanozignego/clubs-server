@@ -16,3 +16,8 @@
         = link_to admin_settings_edit_path, class: "sidebar__link #{active_sidebar(:settings)}" do
           %i.fa.fa-cog.fa-fw
           = Settings.model_name.human
+
+      %li
+        = link_to admin_adds_edit_path, class: "sidebar__link #{active_sidebar(:adds)}" do
+          %i.fa.fa-cog.fa-fw
+          = Adds.model_name.human
